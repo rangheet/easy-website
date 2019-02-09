@@ -1,0 +1,1 @@
+Need to add file-loader from https://webpack.js.org/loaders/file-loader/

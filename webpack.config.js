@@ -1,31 +1,34 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
-   entry: './main.js',
-   output: {
-      path: path.join(__dirname, '/bundle'),
-      filename: 'index_bundle.js'
-   },
-   devServer: {
-      inline: true,
-      port: 8080
-   },
-   module: {
-      rules: [
-         {
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-            query: {
-               presets: ['es2015', 'react']
-            }
-         }
-      ]
-   },
-   plugins:[
-      new HtmlWebpackPlugin({
-         template: './index.html'
-      })
-   ]
-}
+  entry: "./src/index.js",
+  mode: "development",
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: "babel-loader",
+        options: { presets: ["@babel/env"] }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+  resolve: { extensions: ["*", ".js", ".jsx"] },
+  output: {
+    path: path.resolve(__dirname, "dist/"),
+    publicPath: "/dist/",
+    filename: "bundle.js"
+  },
+  devServer: {
+    contentBase: path.join(__dirname, "public/"),
+    port: 8080,
+    publicPath: "http://localhost:8080/dist/",
+    hotOnly: true
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()]
+};
