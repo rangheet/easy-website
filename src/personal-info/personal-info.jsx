@@ -1,6 +1,7 @@
 import React, { Component} from "react";
 import { store } from "../store/index";
 import { getPersonalInfoAction } from "./ducks";
+import { connect } from "react-redux";
 
 class PersonalInfo extends Component{
 
@@ -11,23 +12,36 @@ class PersonalInfo extends Component{
 
     componentDidMount()
     {
-        store.subscribe(() => console.log('Look ma, Redux!!'))
-        console.log("In Component did mount.");
-        store.dispatch(getPersonalInfoAction());
+        //store.subscribe(() => console.log('Look ma, Redux!!'))
+        //console.log("In Component did mount.");
+        this.props.getPersonalInfo();
     }
 
     render()
     {
-        const currentState=store.getState().personalInfoReducer;
-        console.log("CurrentState ", currentState);
+        //const currentState=store.getState().personalInfoReducer;
+        //console.log("CurrentState (personalInfo) ", this.props.personalInfo);
         return (
             <div>
-                Name: {currentState.name} 
-                Occupation: {currentState.job}
+                Name: {this.props.personalInfo.name} <br/>
+                Occupation: {this.props.personalInfo.job}
             </div>
         );
     }
+
+    
 }
 
+function mapStateToProps(state)
+{
+    return {personalInfo: state.personalInfoReducer};
+}
 
-export default PersonalInfo;
+function mapDispatchToProps(dispatch)
+{
+    return { getPersonalInfo: () => dispatch(getPersonalInfoAction()) };
+}
+
+const PersonalInfoClass = connect(mapStateToProps, mapDispatchToProps)(PersonalInfo);
+
+export default PersonalInfoClass;

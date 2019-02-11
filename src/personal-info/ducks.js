@@ -15,7 +15,7 @@ export function getPersonalInfoAction(){
 };
 
 export function personalInfoReducer(state=InitialState, action){
-    console.log("In personalInfoReducer",state, action);
+    //console.log("In personalInfoReducer",state, action);
     switch(action.type)
     {
         case actionType.READ_PERSONALINFO:
