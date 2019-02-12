@@ -1,5 +1,4 @@
 import React, { Component} from "react";
-import { store } from "../store/index";
 import { getPersonalInfoAction } from "./ducks";
 import { connect } from "react-redux";
 
@@ -34,7 +33,7 @@ class PersonalInfo extends Component{
 
 function mapStateToProps(state)
 {
-    return {personalInfo: state.personalInfoReducer};
+    return { personalInfo: state.personalInfoReducer };
 }
 
 function mapDispatchToProps(dispatch)

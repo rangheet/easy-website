@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import { personalInfoReducer } from "./personal-info/ducks";
+import { personalInfoReducer } from "./component/personal-info/ducks";
 
 export const reducer = combineReducers({personalInfoReducer: personalInfoReducer});

@@ -4,7 +4,7 @@ const InitialState={
     job: "SE, Endurance"
 };
 
-const actionType={
+export const actionType={
     READ_PERSONALINFO: '[Personal Info] ReadPersonalInfo'
 };
 
