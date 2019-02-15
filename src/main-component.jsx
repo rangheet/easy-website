@@ -1,15 +1,14 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
-import "./App.css";
 
-class App extends Component{
+class MainComponent extends Component{
   render(){
     return(
-      <div className="App">
+      <div className="MainComponent">
         <h1> Hello, Sherlock!</h1>
       </div>
     );
   }
 }
 
-export default hot(module)(App);
+export default hot(module)(MainComponent);
