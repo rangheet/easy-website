@@ -1,5 +1,5 @@
 import React, { Component} from "react";
-import { getPersonalInfoAction } from "./ducks";
+import { actions } from "./ducks";
 import { connect } from "react-redux";
 
 class PersonalInfo extends Component{
@@ -23,11 +23,11 @@ class PersonalInfo extends Component{
         return (
             <div>
                 Name: {this.props.personalInfo.name} <br/>
-                Occupation: {this.props.personalInfo.job}
+                Occupation: {this.props.personalInfo.occupation} <br/>
+                DateOfBirth: {this.props.personalInfo.dateOfBirth}
             </div>
         );
     }
-
     
 }
 
@@ -38,7 +38,7 @@ function mapStateToProps(state)
 
 function mapDispatchToProps(dispatch)
 {
-    return { getPersonalInfo: () => dispatch(getPersonalInfoAction()) };
+    return { getPersonalInfo: () => dispatch(actions.getPersonalInfoAction()) };
 }
 
 const PersonalInfoClass = connect(mapStateToProps, mapDispatchToProps)(PersonalInfo);

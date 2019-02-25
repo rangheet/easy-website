@@ -1,25 +1,46 @@
+import { SlowBuffer } from "buffer";
 
 const InitialState={
-    name: "Heet Dave",
-    job: "SE, Endurance"
+    name: "[From InitialState] Heet Dave",
+    occupation: "[From InitialState] SE, Endurance",
+    dateOfBirth: "[From InitialState] 20-Feb-1997"
 };
 
 export const actionType={
-    READ_PERSONALINFO: '[Personal Info] ReadPersonalInfo'
+    READ_PERSONALINFO: '[Personal Info] ReadPersonalInfo',
+    UPDATE_PERSONALINFO : '[Personal Info] UpdatePersonalInfo'
 };
 
-export function getPersonalInfoAction(){
+export const actions = {
+
+    getPersonalInfoAction(){
         return {
             type: actionType.READ_PERSONALINFO
         };
+    },
+    updatePersonalInfoAction(payload){
+        return {
+            type: actionType.UPDATE_PERSONALINFO,
+            payload: payload
+        };
+    }
 };
 
 export function personalInfoReducer(state=InitialState, action){
-    //console.log("In personalInfoReducer",state, action);
+
     switch(action.type)
     {
         case actionType.READ_PERSONALINFO:
-            return state;
+            return {...state};
+
+        case actionType.UPDATE_PERSONALINFO:
+            return {
+                ...state,
+                name: action.payload.name,
+                occupation: action.payload.occupation,
+                dateOfBirth: action.payload.dateOfBirth
+            };
+
         default:
             return state;
     }
