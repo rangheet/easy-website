@@ -22,9 +22,15 @@ class PersonalInfo extends Component{
         //console.log("CurrentState (personalInfo) ", this.props.personalInfo);
         return (
             <div>
+                
+                <img id="profile-image" src={this.props.personalInfo.profileImage} alt="Profile Image" ></img>  <br/>
                 Name: {this.props.personalInfo.name} <br/>
                 Occupation: {this.props.personalInfo.occupation} <br/>
-                DateOfBirth: {this.props.personalInfo.dateOfBirth}
+                Company: {this.props.personalInfo.company} <br/>
+                Date of Birth: {this.props.personalInfo.dateOfBirth} <br/>
+                Bio: {this.props.personalInfo.bio} <br/>
+                {/* LinkedIn: {this.props.personalInfo.linkedIn} <br/> */}
+                <a href={this.props.personalInfo.linkedIn} target="_blank" ref="noopener">LinkedIn</a> <br/>
             </div>
         );
     }

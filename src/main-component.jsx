@@ -1,6 +1,7 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
 import PersonalInfo from "./component/personal-info/personal-info.jsx";
+import "./main-component.css";
 
 class MainComponent extends Component{
   render(){

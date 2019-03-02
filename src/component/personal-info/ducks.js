@@ -1,9 +1,14 @@
 import { SlowBuffer } from "buffer";
+import { config } from "../../config";
 
 const InitialState={
     name: "[From InitialState] Heet Dave",
-    occupation: "[From InitialState] SE, Endurance",
-    dateOfBirth: "[From InitialState] 20-Feb-1997"
+    occupation: "[From InitialState] SE",
+    dateOfBirth: "[From InitialState] 20-Feb-1997",
+    company: "[From InitialState] Endurance",
+    linkedIn: "[From InitialState] LINKEDINLINK",
+    bio: "[From InitialState] MYBIO",
+    profileImage: null
 };
 
 export const actionType={
@@ -38,7 +43,11 @@ export function personalInfoReducer(state=InitialState, action){
                 ...state,
                 name: action.payload.name,
                 occupation: action.payload.occupation,
-                dateOfBirth: action.payload.dateOfBirth
+                dateOfBirth: action.payload.dateOfBirth,
+                company: action.payload.company,
+                bio: action.payload.bio,
+                profileImage: config.BackendEndpoint+action.payload.profileImage,
+                linkedIn: action.payload.linkedIn
             };
 
         default:

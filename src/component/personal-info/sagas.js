@@ -11,12 +11,12 @@ function* getPersonalInfo()
 {
     try
     {
-        const personalInfo = yield call(() => api.get(`${config.BackendEndpoint}/api/PersonalInfo`));
+        const personalInfo = yield call(() => api.get(`${config.BackendEndpoint}api/PersonalInfo`));
         yield put(actions.updatePersonalInfoAction(personalInfo));
     }
     catch(e)
     {
-        console.log("[ERROR] Exception in personal-info saga", e);
+        console.error("Exception in personal-info saga", e);
     }
 
 }
