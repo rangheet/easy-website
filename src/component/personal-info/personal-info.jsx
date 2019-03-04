@@ -11,15 +11,11 @@ class PersonalInfo extends Component{
 
     componentDidMount()
     {
-        //store.subscribe(() => console.log('Look ma, Redux!!'))
-        //console.log("In Component did mount.");
         this.props.getPersonalInfo();
     }
 
     render()
     {
-        //const currentState=store.getState().personalInfoReducer;
-        //console.log("CurrentState (personalInfo) ", this.props.personalInfo);
         return (
             <div>
                 
@@ -29,7 +25,6 @@ class PersonalInfo extends Component{
                 Company: {this.props.personalInfo.company} <br/>
                 Date of Birth: {this.props.personalInfo.dateOfBirth} <br/>
                 Bio: {this.props.personalInfo.bio} <br/>
-                {/* LinkedIn: {this.props.personalInfo.linkedIn} <br/> */}
                 <a href={this.props.personalInfo.linkedIn} target="_blank" ref="noopener">LinkedIn</a> <br/>
             </div>
         );
