@@ -1,6 +1,7 @@
 import React, { Component} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
+import { formatDate } from "../../util";
 
 class PersonalInfo extends Component{
 
@@ -18,12 +19,12 @@ class PersonalInfo extends Component{
     {
         return (
             <div>
-                
+                <h2>Personal Info</h2>
                 <img id="profile-image" src={this.props.personalInfo.profileImage} alt="Profile Image" ></img>  <br/>
                 Name: {this.props.personalInfo.name} <br/>
                 Occupation: {this.props.personalInfo.occupation} <br/>
                 Company: {this.props.personalInfo.company} <br/>
-                Date of Birth: {this.props.personalInfo.dateOfBirth} <br/>
+                Date of Birth: {formatDate(this.props.personalInfo.dateOfBirth)} <br/>
                 Bio: {this.props.personalInfo.bio} <br/>
                 <a href={this.props.personalInfo.linkedIn} target="_blank" ref="noopener">LinkedIn</a> <br/>
             </div>
@@ -34,7 +35,7 @@ class PersonalInfo extends Component{
 
 function mapStateToProps(state)
 {
-    return { personalInfo: state.personalInfoReducer };
+    return { personalInfo: state.personalInfo };
 }
 
 function mapDispatchToProps(dispatch)

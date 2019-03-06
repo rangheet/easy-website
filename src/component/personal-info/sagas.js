@@ -14,9 +14,9 @@ function* getPersonalInfo()
         const personalInfo = yield call(() => api.get(`${config.BackendEndpoint}api/PersonalInfo`));
         yield put(actions.updatePersonalInfoAction(personalInfo));
     }
-    catch(e)
+    catch(error)
     {
-        console.error("Exception in personal-info saga", e);
+        console.error("Exception in personal-info saga", error);
     }
 
 }

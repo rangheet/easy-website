@@ -6,5 +6,4 @@ import { ParentWatcherSaga } from "./sagas";
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = createStore(reducer, applyMiddleware(sagaMiddleware));
-
 sagaMiddleware.run(ParentWatcherSaga);

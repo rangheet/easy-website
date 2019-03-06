@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
+import Experiences from "./component/experiences/experiences.jsx";
 import PersonalInfo from "./component/personal-info/personal-info.jsx";
 import "./main-component.css";
 
@@ -9,6 +10,7 @@ class MainComponent extends Component{
       <div className="MainComponent">
         <h1> Hello, Sherlock!</h1>
         <PersonalInfo/>
+        <Experiences/>
       </div>
     );
   }
