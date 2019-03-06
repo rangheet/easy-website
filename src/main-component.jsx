@@ -1,13 +1,16 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
-import ExperiencesComponent from "./component/experiences/experiences.jsx";
+import Experiences from "./component/experiences/experiences.jsx";
+import PersonalInfo from "./component/personal-info/personal-info.jsx";
+import "./main-component.css";
 
 class MainComponent extends Component{
   render(){
     return(
       <div className="MainComponent">
         <h1> Hello, Sherlock!</h1>
-        <ExperiencesComponent/>
+        <PersonalInfo/>
+        <Experiences/>
       </div>
     );
   }
