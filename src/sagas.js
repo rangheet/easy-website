@@ -1,10 +1,22 @@
-import { personalInfoSaga } from "../src/component/personal-info/sagas";
-import { experiencesSagas } from "../src/component/experiences/sagas";
+import { personalInfoSagas } from "./component/personal-info/sagas";
+import { experiencesSagas } from "./component/experiences/sagas";
+import { projectsSagas } from "./component/projects/sagas";
+import { educationSagas } from "./component/education/sagas";
+import { extracurricularSagas } from "./component/extracurricular/sagas";
+import { electivesSagas } from "./component/electives/sagas";
+import { skillsSagas } from "./component/skills/sagas";
+
+
 import { all } from "redux-saga/effects";
 
 const saga = [
-    ...personalInfoSaga,
-    ...experiencesSagas
+    ...personalInfoSagas,
+    ...experiencesSagas,
+    ...projectsSagas,
+    ...educationSagas,
+    ...extracurricularSagas,
+    ...electivesSagas,
+    ...skillsSagas
 ];
 
 export function* ParentWatcherSaga()
