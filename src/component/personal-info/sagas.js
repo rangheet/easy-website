@@ -3,7 +3,7 @@ import { actionType, actions } from "./ducks";
 import { api } from "../../api";
 import { config } from "../../config";
 
-export const personalInfoSaga = [
+export const personalInfoSagas = [
     takeEvery(actionType.READ_PERSONALINFO, getPersonalInfo)
 ];
 
