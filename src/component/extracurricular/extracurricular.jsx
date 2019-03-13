@@ -1,6 +1,7 @@
 import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
+import { map } from "lodash";
 
 class Extracurricular extends Component{
 
@@ -20,7 +21,7 @@ class Extracurricular extends Component{
         return (
             <div>
                 <h2>Extracurricular: </h2>
-                {extracurricular.map((activity,index) => <Fragment key={index.toString()}> 
+                {map(extracurricular,(activity,index) => <Fragment key={index.toString()}> 
                                                             <h4>Extracurricular activity: {activity.organization}</h4> <br/>
                                                             Duration of Activity: {activity.timeOfActivity} <br/>
                                                             Position: {activity.position} <br/>

@@ -7,7 +7,9 @@ import Education from "./component/education/education";
 import Extracurricular from "./component/extracurricular/extracurricular";
 import Electives from "./component/electives/electives";
 import Skills from "./component/skills/skills";
-
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import purple from '@material-ui/core/colors/purple';
+import red from '@material-ui/core/colors/red';
 
 import "./main-component.css";
 

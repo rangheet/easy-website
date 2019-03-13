@@ -1,6 +1,7 @@
 import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
+import { map } from "lodash";
 
 class Skills extends Component{
 
@@ -20,7 +21,7 @@ class Skills extends Component{
         return (
             <div>
                 <h2>Skills: </h2>
-                {skills.map((skill,index) => <Fragment key={index.toString()}> 
+                {map(skills,(skill,index) => <Fragment key={index.toString()}> 
                                                             <h4>Skills: {skill.name}</h4> <br/>
                                                             RatingOutOf10: {skill.ratingOutOf10} <br/>
                                                         </Fragment>)}

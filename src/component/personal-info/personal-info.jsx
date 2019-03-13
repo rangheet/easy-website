@@ -18,7 +18,7 @@ class PersonalInfo extends Component{
     render()
     {
         return (
-            <div>
+            <div id="PersonalInfo" >
                 <h2>Personal Info</h2>
                 <img id="profile-image" src={this.props.personalInfo.profileImage} alt="Profile Image" ></img>  <br/>
                 Name: {this.props.personalInfo.name} <br/>

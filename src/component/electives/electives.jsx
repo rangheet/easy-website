@@ -1,6 +1,7 @@
 import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
+import { map } from "lodash";
 
 class Electives extends Component{
 
@@ -20,7 +21,7 @@ class Electives extends Component{
         return (
             <div>
                 <h2>Electives: </h2>
-                {electives.map((elective,index) => <Fragment key={index.toString()}> 
+                {map(electives,(elective,index) => <Fragment key={index.toString()}> 
                                                             <h4>Elective: {elective.name}</h4> <br/>
                                                             Elective Code: {elective.courseCode} <br/>
                                                             Institute: {elective.institute} <br/>
