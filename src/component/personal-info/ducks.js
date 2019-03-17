@@ -8,7 +8,8 @@ const InitialState={
     company: "[From InitialState] Endurance",
     linkedIn: "[From InitialState] LINKEDINLINK",
     bio: "[From InitialState] MYBIO",
-    profileImage: null
+    profileImage: null,
+    github: "[From InitialState] GITHUB LINK"
 };
 
 export const actionType={
@@ -47,7 +48,8 @@ export function personalInfoReducer(state=InitialState, action){
                 company: action.payload.company,
                 bio: action.payload.bio,
                 profileImage: config.BackendEndpoint+action.payload.profileImage,
-                linkedIn: action.payload.linkedIn
+                linkedIn: action.payload.linkedIn,
+                github: action.payload.github
             };
 
         default:

@@ -21,7 +21,7 @@ class Experiences extends Component{
         let experiences=this.props.experiences.allExperiences;
         return (
             <div id="Experiences">
-                <h2><a href="#Experiences">Experiences:</a></h2>
+                <h2>Experiences:</h2>
                 {map(experiences,(experience,index) => <Fragment key={index.toString()}> 
                                                             <h4>Company: {experience.companyName}</h4> <br/>
                                                             Position: {experience.position} <br/>
