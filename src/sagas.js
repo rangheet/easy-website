@@ -5,6 +5,8 @@ import { educationSagas } from "./component/education/sagas";
 import { extracurricularSagas } from "./component/extracurricular/sagas";
 import { electivesSagas } from "./component/electives/sagas";
 import { skillsSagas } from "./component/skills/sagas";
+import { logosSagas } from "./component/logos/sagas";
+
 
 
 import { all } from "redux-saga/effects";
@@ -16,7 +18,8 @@ const saga = [
     ...educationSagas,
     ...extracurricularSagas,
     ...electivesSagas,
-    ...skillsSagas
+    ...skillsSagas,
+    ...logosSagas
 ];
 
 export function* ParentWatcherSaga()

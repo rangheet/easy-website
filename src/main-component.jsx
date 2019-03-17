@@ -7,6 +7,7 @@ import Education from "./component/education/education";
 import Extracurricular from "./component/extracurricular/extracurricular";
 import Electives from "./component/electives/electives";
 import Skills from "./component/skills/skills";
+import  Logos from "./component/logos/logos";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import purple from '@material-ui/core/colors/purple';
 import red from '@material-ui/core/colors/red';
@@ -17,7 +18,7 @@ class MainComponent extends Component{
   render(){
     return(
       <div className="MainComponent">
-        <h1> Hello, Sherlock!</h1>
+        <Logos/>
         <PersonalInfo/>
         <Experiences/>
         <Projects/>
