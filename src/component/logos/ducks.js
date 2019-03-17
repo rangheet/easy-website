@@ -1,13 +1,5 @@
 import { config } from "../../config";
 
-const logo1 = {
-    github: "[FROM INIT] Github.png"
-};
-
-const logo2 = {
-    linkedIn: "[FROM INIT] Linkedin.png"
-};
-
 const initialState = {
     github: "",
     linkedIn: "",
