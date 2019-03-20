@@ -1,5 +1,5 @@
 
-const dateOptions = { day: 'numeric', month: 'long', year: 'numeric'  };
+const dateOptions = { /*day: 'numeric',*/ month: 'long', year: 'numeric'  };
 
 export function formatDate(dateString)
 {

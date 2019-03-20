@@ -20,6 +20,7 @@ class MainComponent extends Component{
       <div className="MainComponent">
         <Logos/>
         <PersonalInfo/>
+        <div style={{height:"1px", background: "white", width:"100%"}}/>
         <Experiences/>
         <Projects/>
         <Education/>
