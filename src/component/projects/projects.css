@@ -1,0 +1,7 @@
+.projectsWrapperDiv{
+    min-height: 100vh;
+    overflow: hidden;
+    color: white;
+    background: black;
+    position: relative;
+}
