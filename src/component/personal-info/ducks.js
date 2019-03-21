@@ -6,10 +6,7 @@ const InitialState={
     occupation: "[From InitialState] SE",
     dateOfBirth: "[From InitialState] 20-Feb-1997",
     company: "[From InitialState] Endurance",
-    linkedIn: "[From InitialState] LINKEDINLINK",
     bio: "[From InitialState] MYBIO",
-    profileImage: null,
-    github: "[From InitialState] GITHUB LINK"
 };
 
 export const actionType={
@@ -47,9 +44,6 @@ export function personalInfoReducer(state=InitialState, action){
                 dateOfBirth: action.payload.dateOfBirth,
                 company: action.payload.company,
                 bio: action.payload.bio,
-                profileImage: config.BackendEndpoint+action.payload.profileImage,
-                linkedIn: action.payload.linkedIn,
-                github: action.payload.github
             };
 
         default:

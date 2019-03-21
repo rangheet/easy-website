@@ -5,6 +5,7 @@ import "./personal-info.css";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { config } from "../../config";
 
 
 
@@ -30,13 +31,13 @@ class PersonalInfo extends Component{
     render()
     {
         return (
-            <div id="PersonalInfo" className="wrapperDiv">
+            <div id="PersonalInfo" className="wrapperDiv" href="#PersonalInfo">
                 <Grid container spacing={16} justify="flex-end" style={{position: "relative", top: "8%", right: "5%"}}>
-                    <Grid item>
-                        <a href={this.props.personalInfo.linkedIn} target="_blank" ref="noopener"><img id="linkedin-logo" src={this.props.logos.linkedIn} alt="LinkedIn Logo" /></a>
+                    <Grid item>                                                                                     
+                        <a href={this.props.logos.LinkedIn.url} target="_blank" ref="noopener"><img id="linkedin-logo" src={this.props.logos.LinkedIn.filenameOnServer ? config.BackendEndpoint+this.props.logos.LinkedIn.filenameOnServer : undefined} alt={this.props.logos.LinkedIn.logoname} /></a>
                     </Grid>
                     <Grid item> 
-                        <a href={this.props.personalInfo.github} target="_blank" ref="noopener"><img id="github-logo" src={this.props.logos.github} alt="GitHub Logo" /></a>
+                        <a href={this.props.logos.Github.url} target="_blank" ref="noopener"><img id="github-logo" src={this.props.logos.Github.filenameOnServer ? config.BackendEndpoint+this.props.logos.Github.filenameOnServer : undefined} alt={this.props.logos.Github.logoname} /></a>
                     </Grid>           
                 </Grid>
                 

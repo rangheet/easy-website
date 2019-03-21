@@ -1,13 +1,8 @@
 import { config } from "../../config";
 
 const initialState = {
-    github: "",
-    linkedIn: "",
-    endurance: "",
-    fintech: "",
-    isro: "",
-    synapse: "",
-    agariaHeetRakshak: ""
+    LinkedIn: {},
+    Github: {}
 };
 
 export const actionType = {
@@ -35,13 +30,8 @@ export function logosReducer(state = initialState, action){
         case actionType.UPDATE_LOGOS:
             return {
                 ...state,
-                github: config.BackendEndpoint + action.payload.github,
-                linkedIn: config.BackendEndpoint + action.payload.linkedIn,
-                endurance: config.BackendEndpoint + action.payload.endurance,
-                fintech: config.BackendEndpoint + action.payload.fintech,
-                isro: config.BackendEndpoint + action.payload.isro,
-                synapse: config.BackendEndpoint + action.payload.synapse,
-                agariaHeetRakshak: config.BackendEndpoint + action.payload.agariaHeetRakshak
+                LinkedIn: action.payload.LinkedIn,
+                Github: action.payload.Github
             };
         default:
             return state;
