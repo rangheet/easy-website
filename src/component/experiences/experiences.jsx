@@ -43,7 +43,7 @@ class Experiences extends Component{
                                                 <div style={{width: "1150px"}}>
                                                     <Typography variant="h5" color="inherit" align="left">
                                                         {experience.companyName}
-                                                        <a href={experience.companyLogo.url} style={{position:"absolute", top:"5%"}}><i className="material-icons">link</i></a>
+                                                        <a href={experience.companyLogo.url} target="_blank" ref="noopener" style={{position:"absolute", top:"5%"}}><i className="material-icons">link</i></a>
                                                     </Typography>
                                                     <Typography variant="subtitle1" color="inherit" align="left">
                                                         {experience.position}
