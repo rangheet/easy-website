@@ -14,7 +14,8 @@ const projetct2 = {
 };
 
 const initialState = {
-    allProjects:[ projetct1, projetct2 ]
+    personalProjects:[ projetct1 ],
+    academicProjects: [ projetct2 ]
 };
 
 export const actionType = {
@@ -42,7 +43,8 @@ export function projectsReducer(state = initialState, action){
         case actionType.UPDATE_PROJECTS:
             return {
                 ...state,
-                allProjects: action.payload
+                personalProjects: action.payload.personalProjects,
+                academicProjects: action.payload.academicProjects
             };
         default:
             return state;

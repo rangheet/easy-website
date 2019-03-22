@@ -22,6 +22,7 @@ class MainComponent extends Component{
         <PersonalInfo/>
         <div style={{height:"1px", background: "white", width:"100%"}}/>
         <Experiences/>
+        <div style={{height:"1px", background: "white", width:"100%"}}/>
         <Projects/>
         <Education/>
         <Extracurricular/>

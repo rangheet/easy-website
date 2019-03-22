@@ -50,9 +50,9 @@ class PersonalInfo extends Component{
                     <Grid container justify="center" style={{position: "absolute", top: "350%"}}>
                         <Grid item style={{}}>
                             <Button variant="outlined" color="inherit" onClick={()=>{this.toggleShowBio()}} style={{outline: "none"}}>
-                            <Typography variant="button" color="inherit" align="center">
-                                Bio
-                            </Typography>
+                                <Typography variant="button" color="inherit" align="center">
+                                    Bio
+                                </Typography>
                             </Button>
                         </Grid>
                         <Grid item style={{marginTop: "1%"}}>
