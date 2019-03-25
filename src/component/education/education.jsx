@@ -1,8 +1,8 @@
 import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
-import { map } from "lodash";
-import {Paper, Typography, Grid} from "@material-ui/core";
+import { map, filter } from "lodash";
+import {Paper, Typography, Grid, Chip} from "@material-ui/core";
 import "./education.css";
 import { config } from "../../config";
 class Education extends Component{
@@ -22,11 +22,11 @@ class Education extends Component{
         let education=this.props.education.education;
         return (
             <div className="educationWrapper">
-                <div style={{ position: "relative", top:"3%", left: "1%"}}>
+                <div style={{ position: "relative", top:"3vh", left: "1%", paddingBottom: 16}}>
                     <Typography variant="h4" color="inherit" align="left" style={{position: "static", color: "#eeeeee"}}>
                         Education:
                     </Typography>
-                    {map(education,(institute,index) => <Paper key={index} square elevation={0} style={{position: "relative", padding: "8px" ,marginTop: 16, marginBottom: 16, marginLeft: 4, marginRight: 2, width: "98%", left: "0%", border:"4px white solid", background: "black"}}>
+                    {map(education,(institute,index) => <Paper key={index} square elevation={0} style={{position: "relative", padding: "8px" ,marginTop: 16, marginBottom: 0, marginLeft: 4, marginRight: 2, width: "98%", left: "0%", border:"4px white solid", background: "black"}}>
                                                             <Grid container direction="row">
                                                                 <Grid item style={{maxWidth: "100%", maxHeight: "100%", marginRight: 15}}>
                                                                     <a href={institute.instituteLogo.url} target="_blank" ref="noopener"><img id={`${institute.instituteLogo.logoname}-logo`} className="logo-div" src= {institute.instituteLogo.filenameOnServer ? config.BackendEndpoint+institute.instituteLogo.filenameOnServer : undefined} alt={institute.instituteLogo.logoname}/></a>
@@ -59,10 +59,23 @@ class Education extends Component{
                                                                     <Typography variant="button" color="inherit" align="left">
                                                                         CGPA: {institute.cgpa}
                                                                     </Typography>
+                                                                    <Grid container direction="row">
+                                                                        <Grid item style={{position:"relative", top: "4px"}}>
+                                                                                Coursework:
+                                                                        </Grid>
+                                                                        <Grid item>
+                                                                        {
+                                                                            map(filter(this.props.electives, (elective) => elective.institute===elective.instituteAbbr)[0], 
+                                                                            filteredElective => <Chip key={filteredElective.courseCode} label={`${filteredElective.courseCode}-${filteredElective.name}`} style={{border: "2px solid white", background: "transparent", marginLeft:  "5px" ,marginRight: "5px"}} color="primary"/>)
+                                                                        }
+                                                                        </Grid>
+                                                                    </Grid>
+                                                                    
+                                                                    
                                                                 </Grid>                                              
                                                             </Grid>
                                                         </Paper>)}
-                                                        
+                                                    
                 </div>
             </div>
         );
@@ -72,7 +85,9 @@ class Education extends Component{
 
 function mapStateToProps(state)
 {
-    return { education: state.education }; 
+    return { education: state.education,
+             electives: state.electives
+    }; 
 }
 
 function mapDispatchToProps(dispatch)

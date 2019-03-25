@@ -1,6 +1,6 @@
-.extracurricularWrapperDiv{
+.skillsWrapper{
     color: white;
     background: black;
+    /* height: 100vh; */
     position: relative;
-    min-height: 55vh;
 }

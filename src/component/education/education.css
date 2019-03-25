@@ -3,7 +3,9 @@
     color: white;
     background: black;
     position: relative;
-    top: 3vh;
-    margin-bottom: 6vh;
+    min-height: 100vh;
+    overflow: hidden;
+    /* top: 3vh;
+    margin-bottom: 6vh; */
 
 }
