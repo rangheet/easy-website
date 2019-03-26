@@ -6,7 +6,7 @@ import {Tabs,Tab,Paper,Grid,Chip,Typography} from '@material-ui/core';
 
 import "./projects.css";
 
-let tab = Object.freeze({"Academic":0, "Personal":1});
+let tab = Object.freeze({Academic: 0, Personal: 1});
 class Projects extends Component{
 
     constructor(props)
@@ -44,7 +44,7 @@ class Projects extends Component{
                             Projects:
                 </Typography>
 
-                <Tabs value={this.state.projectTab} onChange={this.switchTab} indicatorColor="primary" >
+                <Tabs value={this.state.projectTab} onChange={this.switchTab}>
                     <Tab label="Academic" style={{outline: "none"}}/>
                     <Tab label="Personal" style={{outline: "none"}}/>
                 </Tabs>

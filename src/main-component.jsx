@@ -19,15 +19,19 @@ class MainComponent extends Component{
     return(
       <div className="MainComponent">
         <Logos/>
+        <Electives/>
         <PersonalInfo/>
         <div style={{height:"1px", background: "white", width:"100%"}}/>
         <Experiences/>
         <div style={{height:"1px", background: "white", width:"100%"}}/>
-        <Projects/>
         <Education/>
+        <div style={{height:"1px", background: "white", width:"100%"}}/>
+        <div className="ProjectsSkillsWrapper">
+          <Projects/>
+          <Skills/>
+        </div>
+        <div style={{height:"1px", background: "white", width:"100%"}}/>
         <Extracurricular/>
-        <Electives/>
-        <Skills/>
       </div>
     );
   }

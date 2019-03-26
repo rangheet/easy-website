@@ -2,6 +2,7 @@ import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
 import { map } from "lodash";
+import {Typography, Chip, Avatar} from '@material-ui/core';
 
 class Electives extends Component{
 
@@ -17,17 +18,7 @@ class Electives extends Component{
 
     render()
     {
-        let electives=this.props.electives.electives;
-        return (
-            <div>
-                <h2>Electives: </h2>
-                {map(electives,(elective,index) => <Fragment key={index.toString()}> 
-                                                            <h4>Elective: {elective.name}</h4> <br/>
-                                                            Elective Code: {elective.courseCode} <br/>
-                                                            Institute: {elective.institute} <br/>
-                                                        </Fragment>)}
-            </div>
-        );
+        return null;
     } 
 
 }

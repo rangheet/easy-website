@@ -10,7 +10,9 @@ const skill2 = {
 };
 
 const initialState = {
-    skills:[ skill1, skill2 ]
+    languageSkills: [],
+    webTechSkills: [],
+    PMSkills: []
 };
 
 export const actionType = {
@@ -38,7 +40,9 @@ export function skillsReducer(state = initialState, action){
         case actionType.UPDATE_SKILLS:
             return {
                 ...state,
-                skills: action.payload
+                languageSkills: action.payload.languageSkills,
+                webTechSkills: action.payload.webTechSkills,
+                PMSkills: action.payload.PMSkills
             };
         default:
             return state;

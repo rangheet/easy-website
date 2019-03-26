@@ -6,7 +6,8 @@ const institute1 = {
     cgpa: 7.06,
     city: "Gandhinagar",
     state: "Gujarat",
-    country: "India"
+    country: "India",
+    instituteLogo: {}
 };
 
 
