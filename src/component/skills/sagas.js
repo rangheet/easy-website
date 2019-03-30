@@ -24,20 +24,23 @@ function* getSkills(){
 
 function segregateSkills(skills){
 
-    let languageSkills = [], webTechSkills = [], PMSkills = [];
+    let languageSkills = [], webTechSkills = [], PMSkills = [], DevOpsTools = [];
 
     forEach(skills, (skill)=> {
         if(skill.category==="Language")        
             languageSkills.push(skill);
         else if(skill.category==="PM")
             PMSkills.push(skill);
-        else
+        else if(skill.category==="WebTech")
             webTechSkills.push(skill);
+        else
+            DevOpsTools.push(skill);
     });
 
     return {
         languageSkills,
         webTechSkills,
-        PMSkills
+        PMSkills,
+        DevOpsTools
     };
 }

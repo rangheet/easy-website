@@ -3,14 +3,16 @@ const experience1 = {
     company: 'Endurance',
     position: 'SE',
     duration: '2 mos',
-    companyLogo: {}
+    companyLogo: {},
+    workDescription: []
 };
 
 const experience2 = {
     company: 'Fintech',
     position: 'SE',
     duration: '8 mos',
-    companyLogo: {}
+    companyLogo: {},
+    workDescription: []
 };
 
 const initialState = {

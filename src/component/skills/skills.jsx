@@ -5,7 +5,7 @@ import { map } from "lodash";
 import { LinearProgress, Tabs, Tab } from "@material-ui/core";
 import "./skills.css";
 
-const tabs = Object.freeze({Language: 0, WebTech: 1, PM: 2});
+const tabs = Object.freeze({Language: 0, WebTech: 1, PM: 2, DevOpsTools: 3});
 
 class Skills extends Component{
 
@@ -40,26 +40,31 @@ class Skills extends Component{
         {
             skills=this.props.skills.webTechSkills;
         }
-        else
+        else if(this.state.skillTabs==tabs.PM)
         {
             skills=this.props.skills.PMSkills;
+        }
+        else
+        {
+            skills=this.props.skills.DevOpsTools;
         }
 
         return (
             <div className="skillsWrapper">
-                <div style={{position: "relative", top: "3%", left: "1.5vh"}}>
+                <div style={{position: "relative", top: "6vh", left: "1.5vh"}}>
                     <h2>Skills: </h2>
 
                     <Tabs value={this.state.skillTabs} onChange={this.handleChange}>
                         <Tab label="Languages" style={{outline: "none"}}/>
                         <Tab label="Web Technologies" style={{outline: "none"}}/>
-                        <Tab label="Project Managament Tools" style={{outline: "none"}}/>
+                        <Tab label="Project Managament" style={{outline: "none"}}/>
+                        <Tab label="DevOps Tools" style={{outline: "none"}}/>
                     </Tabs>
                     <div style={{position: "relative", padding: "10px", paddingBottom: "25px" ,marginTop: 16, marginBottom: 16, marginLeft: 4, marginRight: 2, width: "50%", left: "0%", border:"4px white solid", background: "black"}}>
-                       {map(skills,(skill,index) => <Fragment key={index.toString()}> 
+                       {map(skills,(skill,index) => <div key={index.toString()} style={{margin: 5}}> 
                                                             {skill.name}
                                                             <LinearProgress variant="determinate" value={skill.ratingOutOf10 * 10}></LinearProgress>
-                                                    </Fragment>)}
+                                                    </div>)}
                     </div>
 
                 </div>

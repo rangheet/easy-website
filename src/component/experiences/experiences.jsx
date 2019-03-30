@@ -49,9 +49,11 @@ class Experiences extends Component{
                                                         {experience.position}
                                                     </Typography>
                                                     <Typography variant="body1" color="inherit" align="left">
-                                                        {experience.workDescription}
+                                                        {map(experience.workDescription, (descriptionItem,index) => 
+                                                            <li key={index}>{descriptionItem}</li>
+                                                        )}
                                                     </Typography>
-                                                    <Grid container direction="row">
+                                                    <Grid container direction="row" style={{position: "absolute",bottom: "10%"}}>
                                                         {map(experience.technologies,(technology, index) => 
                                                             <Grid item key={index}>
                                                                 <Chip label={technology} style={{border: "2px solid white", background: "transparent", marginRight: "5px"}} color="primary"/>                                                                

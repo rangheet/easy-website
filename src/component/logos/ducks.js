@@ -2,7 +2,8 @@ import { config } from "../../config";
 
 const initialState = {
     LinkedIn: {},
-    Github: {}
+    Github: {},
+    Email: {}
 };
 
 export const actionType = {
@@ -31,7 +32,8 @@ export function logosReducer(state = initialState, action){
             return {
                 ...state,
                 LinkedIn: action.payload.LinkedIn,
-                Github: action.payload.Github
+                Github: action.payload.Github,
+                Email: action.payload.Email
             };
         default:
             return state;

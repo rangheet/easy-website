@@ -9,55 +9,50 @@
     width: auto;
 }
   
-/* .h2Header {
-    font-size: 150px;
-    text-align: center;
-    position: relative;
-    top: 40%;
-    width: 100%;
-    font-family: Helvetica
-} */
-
 #linkedin-logo{
     height: 30px;
     width: auto;
-    /* position: absolute;
-    top: 5%;
-    right: 5%; */
 } 
 
 #github-logo{
     height: 30px;
     width: auto;
-    /* position: absolute;
-    top: 4.8%;
-    right: 2%; */
 } 
 
-/* #bioWrapper{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
+#email-logo{
+    position: relative;
+    height: 40px;
+    width: auto;
+    top: -4px;
+} 
+
+#bio-button:hover{
+    border-color:#007bff
 }
 
-#bioText{
+.line-1{
     position: relative;
-    text-align: center;
-    width: 100%;
+    top: 50%;  
+    width: 12.8em;
     margin: 0 auto;
-    margin-top: 1%;
+    border-right: 2px solid rgba(255,255,255,.75);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
 }
 
-#bioButton{
-    position: relative;
-    color: white;
-    background:transparent;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom-color: white;
-    border-bottom-width: 3px;
-    outline:none;
-    top: 50%;
-    left: 50%;
-} */
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 3s steps(35) 1s 1 normal both,
+             blinkTextCursor 500ms steps(35) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 12.8em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
