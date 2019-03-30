@@ -1,0 +1,11 @@
+.MainComponent {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ProjectsSkillsWrapper {
+    color: white;
+    background: black;
+    min-height: 160vh;
+    overflow: hidden;
+    padding-bottom: 10vh;
+}

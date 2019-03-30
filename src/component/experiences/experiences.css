@@ -1,0 +1,11 @@
+.experiencesWrapperDiv {
+    height: 100vh;
+    color: white;
+    background: black;
+    /* background: #eeeeee; */
+}
+
+.logo-div {
+    height: 200px;
+    width:  200px;
+}
