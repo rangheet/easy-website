@@ -1,5 +1,5 @@
 {
-  "name": "personal-website-frontend",
+  "name": "PersonalWebsite",
   "version": "1.0.0",
   "description": "This will be source code to my personal website",
   "main": "webpack.config.js",
@@ -38,13 +38,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rangheet/personal-website-frontend.git"
+    "url": "git+https://github.com/rangheet/PersonalWebsite.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rangheet/personal-website-frontend/issues"
+    "url": "https://github.com/rangheet/PersonalWebsite/issues"
   },
-  "homepage": "https://rangheet.github.io/resume"
+  "homepage": "https://rangheet.github.io/PersonalWebsite"
 }
