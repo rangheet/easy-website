@@ -56,18 +56,21 @@ class Projects extends Component{
                             <Typography variant="h5" color="inherit" align="left">
                                 {project.title}
                             </Typography>
-                            <Grid container direction="row">
-                                {this.state.projectTab===tab.Academic && <Grid item>
-                                    <i className="material-icons">school</i>
-                                </Grid>}
-                                <Grid item>
-                                    <Typography variant="subtitle1" color="inherit" align="left" style={{marginLeft: "5px"}}>
-                                        {project.company}
-                                    </Typography>
-                                </Grid>
-                            </Grid>        
-                            <Typography variant="body1" color="inherit" align="left">
-                                Description: {project.projectDescription}
+                            {this.state.projectTab===tab.Academic && 
+                                <Grid container direction="row">
+                                    <Grid item>
+                                        <i className="material-icons">school</i>
+                                    </Grid>
+                                    <Grid item>
+                                        <Typography variant="subtitle1" color="inherit" align="left" style={{marginLeft: "5px"}}>
+                                            {project.company}
+                                        </Typography>
+                                    </Grid>
+                                </Grid>}        
+                            <Typography variant="body1" color="inherit" align="left" style={{marginBottom: 10}}>
+                                Description: {map(project.projectDescription, (descriptionItem,index) => 
+                                                            <li key={index}>{descriptionItem}</li>
+                                )}
                             </Typography>
                             <Grid container direction="row">
                                 {map(project.technologies,(technology, index) => 

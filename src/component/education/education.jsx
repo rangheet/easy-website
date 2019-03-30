@@ -40,7 +40,7 @@ class Education extends Component{
                                                                         <a href={institute.instituteLogo.url} target="_blank" ref="noopener" style={{position:"absolute", top:"5%"}}><i className="material-icons">link</i></a>
                                                                     </Typography>
                                                                     <Grid item>
-                                                                        <div style={{position:"relative", right:0, top: "10%", marginRight:5}}>   
+                                                                        <div style={{position:"absolute", right:5, top: 10}}>            
                                                                             <Grid container direction="row">
                                                                                 <Grid item>
                                                                                     <i className="material-icons">location_on</i>
@@ -51,22 +51,29 @@ class Education extends Component{
                                                                                     </Typography>
                                                                                 </Grid>
                                                                             </Grid>
+                                                                            <Grid item style={{position:"absolute", left: 7}}>
+                                                                                    <Typography variant="subtitle1" color="inherit" align="left">
+                                                                                        {institute.startYear}-{institute.endYear} <br/>                                                                               
+                                                                                    </Typography>
+                                                                            </Grid>
                                                                         </div>
                                                                     </Grid>
-                                                                    <Typography variant="subtitle1" color="inherit" align="left">
-                                                                        {institute.startYear}-{institute.endYear} <br/>                                                                               
-                                                                    </Typography>
-                                                                    <Typography variant="button" color="inherit" align="left">
+                                                                    
+                                                                    <Typography variant="button" color="inherit" align="left" style={{position: "relative",  top: 8}}>
                                                                         CGPA: {institute.cgpa}
                                                                     </Typography>
-                                                                    <Grid container direction="row">
+                                                                    <Grid container direction="row" style={{position: "absolute",  bottom: 30}}>
                                                                         <Grid item style={{position:"relative", top: "4px"}}>
                                                                                 Coursework:
                                                                         </Grid>
                                                                         <Grid item>
                                                                         {
-                                                                            map(filter(this.props.electives, (elective) => elective.institute===elective.instituteAbbr)[0], 
-                                                                            filteredElective => <Chip key={filteredElective.courseCode} label={`${filteredElective.courseCode}-${filteredElective.name}`} style={{border: "2px solid white", background: "transparent", marginLeft:  "5px" ,marginRight: "5px"}} color="primary"/>)
+                                                                            <div style={{width: "1000px", display: "flex", flexWrap: "wrap"}}>
+                                                                            {
+                                                                                map(filter(this.props.electives, (elective) => elective.institute===elective.instituteAbbr)[0], 
+                                                                                filteredElective => <Chip key={filteredElective.courseCode} label={`${filteredElective.name}`} style={{border: "2px solid white", background: "transparent", margin: "3px"}} color="primary"/>)
+                                                                            }
+                                                                            </div>
                                                                         }
                                                                         </Grid>
                                                                     </Grid>

@@ -12,7 +12,8 @@ const skill2 = {
 const initialState = {
     languageSkills: [],
     webTechSkills: [],
-    PMSkills: []
+    PMSkills: [],
+    DevOpsTools: []
 };
 
 export const actionType = {
@@ -42,7 +43,8 @@ export function skillsReducer(state = initialState, action){
                 ...state,
                 languageSkills: action.payload.languageSkills,
                 webTechSkills: action.payload.webTechSkills,
-                PMSkills: action.payload.PMSkills
+                PMSkills: action.payload.PMSkills,
+                DevOpsTools: action.payload.DevOpsTools
             };
         default:
             return state;

@@ -31,9 +31,7 @@ class Extracurricular extends Component{
                                 <Typography variant="h5" color="inherit" align="left">
                                     {activity.organization}
                                 </Typography>                                                                
-                                <Grid item>
-                                    <div style={{position:"relative", right:0, top: "10%", marginRight:5}}>   
-                                        <Grid container direction="row">
+                                <Grid container direction="row">
                                             <Grid item>
                                                 <i className="material-icons">person</i>
                                             </Grid>
@@ -42,11 +40,12 @@ class Extracurricular extends Component{
                                                     {activity.position}
                                                 </Typography>
                                             </Grid>
-                                        </Grid>
-                                    </div>
                                 </Grid>
-                                <Grid item>
-                                    <div style={{position:"relative", right:0, top: "10%", marginRight:5}}>   
+                                <Grid container>
+                                    <div style={{position:"absolute", right: "3vh", top: 10}}>
+                                        <Typography variant="subtitle1" color="inherit" align="left">
+                                            {activity.timeOfActivity}
+                                        </Typography>
                                         <Grid container direction="row">
                                             <Grid item>
                                                 <i className="material-icons">location_on</i>
@@ -59,11 +58,9 @@ class Extracurricular extends Component{
                                         </Grid>
                                     </div>
                                 </Grid>
-                                <Typography variant="subtitle1" color="inherit" align="left">
-                                    {activity.timeOfActivity}
-                                </Typography>
-                                <Typography variant="body1" color="inherit" align="left">
-                                    {activity.workDescription}
+                                <Typography variant="body2" color="inherit" align="left">
+                                    Description: &nbsp;
+                                    <li>{activity.workDescription}</li>
                                 </Typography>
                             </Paper>)}
                 </div>

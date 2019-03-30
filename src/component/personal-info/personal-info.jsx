@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { config } from "../../config";
+import { Paper } from "@material-ui/core";
 
 
 
@@ -38,31 +39,39 @@ class PersonalInfo extends Component{
                     </Grid>
                     <Grid item> 
                         <a href={this.props.logos.Github.url} target="_blank" ref="noopener"><img id="github-logo" src={this.props.logos.Github.filenameOnServer ? config.BackendEndpoint+this.props.logos.Github.filenameOnServer : undefined} alt={this.props.logos.Github.logoname} /></a>
+                    </Grid>       
+                    <Grid item> 
+                        <a href={this.props.logos.Email.url}><img id="email-logo" src={this.props.logos.Email.filenameOnServer ? config.BackendEndpoint+this.props.logos.Email.filenameOnServer : undefined} alt={this.props.logos.Email.logoname} /></a>
                     </Grid>           
                 </Grid>
                 
-                <Grid container justify="center" style={{position: "relative", top: "40%"}} direction="column" alignItems="center">
+                <Grid container justify="center" style={{position: "relative", top: "35%"}} direction="column" alignItems="center">
                     <Grid item style={{}}>
-                        <Typography variant="h1" color="inherit" align="center" >
-                            HEET DAVE
+                        <Typography variant="h3" color="inherit" align="center" className="line-1 anim-typewriter">
+                                Welcome to Sherlock's 221B
                         </Typography>
+                        {/* <Typography variant="h1" color="inherit" align="center" >
+                            {this.props.personalInfo.name.toUpperCase()}
+                        </Typography> */}
                     </Grid>
-                    <Grid container justify="center" style={{position: "absolute", top: "350%"}}>
-                        <Grid item style={{}}>
-                            <Button variant="outlined" color="inherit" onClick={()=>{this.toggleShowBio()}} style={{outline: "none"}}>
+                    <Grid container justify="center" style={{position: "absolute", top: "30vh"}}>
+                        <Grid item style={{marginRight:16}}>
+                            <Button id="bio-button" variant="outlined" color="inherit" onClick={()=>{this.toggleShowBio()}} style={{outline: "none"}}>
                                 <Typography variant="button" color="inherit" align="center">
                                     Bio
                                 </Typography>
                             </Button>
                         </Grid>
-                        <Grid item style={{marginTop: "1%"}}>
+                        <Grid item>
+                            <Button variant="outlined" color="inherit" href={config.BackendEndpoint + this.props.personalInfo.resume} target="_blank" ref="noopener" style={{outline: "none"}}>
+                                <Typography variant="button" color="inherit" align="center">
+                                    Resume
+                                </Typography>
+                            </Button>
+                        </Grid>
+                        <Grid item style={{marginTop: "5vh"}}>
                             { this.state.showBio && <Typography variant="body1" color="inherit" align="center" style={{position: "relative", width: "80%", left: "10%"}}>
-                                        I am currently working as a Software Engineer in Endurance International Group.
-                                        Barton waited twenty always repair in within we do. An delighted offending curiosity my is dashwoods at. 
-                                        Boy prosperous increasing surrounded companions her nor advantages sufficient put. 
-                                        John on time down give meet help as of. Him waiting and correct believe now cottage she another. 
-                                        Vexed six shy yet along learn maids her tiled. Through studied shyness evening bed him winding present. 
-                                        excuse hardly on my thirty it wanted.
+                                {this.props.personalInfo.bio}
                             </Typography>
                             }
                         </Grid>
