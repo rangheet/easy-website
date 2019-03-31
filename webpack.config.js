@@ -3,7 +3,7 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.js",
-  mode: "development",
+  //mode: "development",
   module: {
     rules: [
       {
@@ -30,5 +30,6 @@ module.exports = {
     publicPath: "http://localhost:8080/dist/",
     hotOnly: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [new webpack.HotModuleReplacementPlugin()
+  ]
 };
