@@ -12,7 +12,28 @@ export const extracurricularSagas = [
 function* getExtracurricular(){
 
     try{
-        const extracurricular = yield call(() => api.get(`${config.BackendEndpoint}api/Extracurricular`));
+        let extracurricular = yield call(() => api.get(`${config.BackendEndpoint}api/Extracurricular`));
+        if(extracurricular==="Error!")
+        {
+            extracurricular = [
+                {
+                  "state": "Gujarat",
+                  "country": "India",
+                  "organization": "Synapse, DA-IICT",
+                  "timeOfActivity": "Apr 2016 - Mar 2017",
+                  "workDescription": "Played a key role in sponsorship, marketing and event management of Annual Festival. Dealt with various companies regarding sponsorship and marketing. As a team managed to get $70,000 for the fest.",
+                  "position": "Core Committee Member"
+                },
+                {
+                  "state": "Gujarat",
+                  "country": "India",
+                  "organization": "Agaria Heet Rakshak Manch",
+                  "timeOfActivity": "December 2015",
+                  "workDescription": "Worked in desert area of Gujarat to spread awareness among salt farmers regarding use of solar water pump for salt farming.",
+                  "position": "Volunteer"
+                }
+              ];
+        }
         yield put(actions.updateExtracurricular(extracurricular));
     }
     catch(error)

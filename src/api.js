@@ -16,12 +16,16 @@ export const api={
                     return response.json();
                 else
                 {
-                    throw new Error("Response Status:"+response.status + " and Response Message:" + response.statusText);
+                    return "Error!";
+                    //throw new Error("Response Status:"+response.status + " and Response Message:" + response.statusText);
                 }
                     
             })
             .then(response => response)
-            .catch(error => { throw(error) });
+            .catch(error => { 
+                console.log("APAPAPA", error);
+                return "Error!"; 
+            });
     }
     
 };

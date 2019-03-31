@@ -12,7 +12,28 @@ export const logosSagas = [
 function* getLogos(){
 
     try{
-        const logos = yield call(() => api.get(`${config.BackendEndpoint}api/Logos`));
+        let logos = yield call(() => api.get(`${config.BackendEndpoint}api/Logos`));
+
+        if(logos==="Error!")
+        {
+            logos = {
+                "LinkedIn": {
+                  "url": "https://www.linkedin.com/in/heetdave/",
+                  "logoname": "LinkedIn",
+                  "filenameOnServer": "linkedin-logo-white.svg"
+                },
+                "Email": {
+                  "url": "mailto:heetdave@outlook.com",
+                  "logoname": "Email",
+                  "filenameOnServer": "email-icon.png"
+                },
+                "Github": {
+                  "url": "https://github.com/rangheet",
+                  "logoname": "Github",
+                  "filenameOnServer": "github-logo-white.png"
+                }
+              };
+        }
         yield put(actions.updateLogos(logos));
     }
     catch(error)

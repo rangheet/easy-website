@@ -12,7 +12,27 @@ export const educationSagas = [
 function* getEducation(){
 
     try{
-        const education = yield call(() => api.get(`${config.BackendEndpoint}api/Education`));
+        let education = yield call(() => api.get(`${config.BackendEndpoint}api/Education`));
+        if(education==="Error!")
+        {
+            education = [
+                {
+                  "state": "Gujarat",
+                  "country": "India",
+                  "cgpa": 7.06,
+                  "instituteName": "Dhirubhai Ambani Institute of Information and Communication Technology (DA-IICT)",
+                  "startYear": 2014,
+                  "endYear": 2018,
+                  "city": "Gandhinagar",
+                  "instituteLogo": {
+                    "url": "https://www.daiict.ac.in/",
+                    "logoname": "DA-IICT",
+                    "filenameOnServer": "daiict-logo.jpg"
+                  },
+                  "instituteAbbr": "DA-IICT"
+                }
+              ];
+        }
         yield put(actions.updateEducation(education));
     }
     catch(error)
