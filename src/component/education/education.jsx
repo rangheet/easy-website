@@ -39,21 +39,27 @@ class Education extends Component{
                                                                         <a href={institute.instituteLogo.url} target="_blank" ref="noopener" className="linkIcon"><i className="material-icons">link</i></a>
                                                                     </Typography>
                                                                     <Grid item className="educationLocationTime">
-                                                                            <Grid container direction="row">
-                                                                                <Grid item>
-                                                                                    <i className="material-icons">location_on</i>
-                                                                                </Grid>
-                                                                                <Grid item>
-                                                                                    <Typography variant="subtitle1" color="inherit" align="left">
-                                                                                        {institute.state}, {institute.country}
-                                                                                    </Typography>
-                                                                                </Grid>
-                                                                            </Grid>
+                                                                        <Grid container direction="column">
                                                                             <Grid item className="educationStartEndTime">
-                                                                                    <Typography variant="subtitle1" color="inherit" align="left">
-                                                                                        {institute.startYear}-{institute.endYear} <br/>                                                                               
-                                                                                    </Typography>
+                                                                                <Typography variant="subtitle1" color="inherit" align="left">
+                                                                                    {institute.startYear}-{institute.endYear} <br/>                                                                               
+                                                                                </Typography>
                                                                             </Grid>
+                                                                            <Grid item>
+                                                                                <Grid container direction="row">
+                                                                                    <Grid item>
+                                                                                        <i className="material-icons">location_on</i>
+                                                                                    </Grid>
+                                                                                    <Grid item>
+                                                                                        <Typography variant="subtitle1" color="inherit" align="left">
+                                                                                            {institute.state}, {institute.country}
+                                                                                        </Typography>
+                                                                                    </Grid>
+                                                                                </Grid>
+                                                                            </Grid>
+                                                                        </Grid>
+                                                                            
+                                                                            
                                                                     </Grid>
                                                                     
                                                                     <Typography variant="button" color="inherit" align="left">

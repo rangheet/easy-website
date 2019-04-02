@@ -25,26 +25,25 @@ class Experiences extends Component{
         return (
             <Fragment>
                 <div id="Experiences" className="experiencesWrapperDiv" >
-                    <div style={{ position: "relative", top: "3vh",  left: "2vh"}}>
-                        <Typography variant="h4" color="inherit" align="left" style={{position: "relative", color: "#eeeeee"}}>
+                        <Typography variant="h4" color="inherit" align="left">
                                 Experiences:
                         </Typography>
                         {map(experiences,(experience,index) => {
 
                             return (<Fragment key={index}>
-                                        <Paper square elevation={0} style={{position: "relative", padding: "8px" ,marginTop: 16, marginBottom: 16, marginLeft: 4, marginRight: 2, width: "98%", left: "0%", border:"4px white solid", background: "black"}}>
+                                        <Paper square className="experiencePaper">
                                             <Grid container direction="row">
-                                                <Grid item style={{maxWidth: "100%", maxHeight: "100%", marginRight: 15}}>
+                                                <Grid item className="pictureContainer">
                                                     <a href={experience.companyLogo.url} target="_blank" ref="noopener"><img id={`${experience.companyLogo.logoname}-logo`} className="logo-div" src= {experience.companyLogo.filenameOnServer ? config.BackendEndpoint+experience.companyLogo.filenameOnServer : undefined} alt={experience.companyLogo.logoname}/></a>
                                                 </Grid>
                                                 <Grid item>
-                                                    <div style={{width:"1px", background: "white", height:"50%", marginRight: 15, position: "relative", top: "25%"}}/>
+                                                    <div className="pictureDivider"/>
                                                 </Grid>
                                                 <Grid item>
-                                                    <div style={{minWidth: "120vh"}}>
+                                                    <div>
                                                         <Typography variant="h5" color="inherit" align="left">
                                                             {experience.companyName}
-                                                            <a href={experience.companyLogo.url} target="_blank" ref="noopener" style={{position:"absolute", top:"5%"}}><i className="material-icons">link</i></a>
+                                                            <a href={experience.companyLogo.url} target="_blank" ref="noopener" className="linkIcon"><i className="material-icons">link</i></a>
                                                         </Typography>
                                                         <Typography variant="subtitle1" color="inherit" align="left">
                                                             {experience.position}
@@ -54,17 +53,17 @@ class Experiences extends Component{
                                                                 <li key={index}>{descriptionItem}</li>
                                                             )}
                                                         </Typography>
-                                                        <Grid container direction="row" style={{position: "relative", top: "5vh"}}>
+                                                        <Grid container direction="row" className="experienceTechSkillContainer">
                                                             {map(experience.technologies,(technology, index) => 
                                                                 <Grid item key={index}>
-                                                                    <Chip label={technology} style={{border: "2px solid white", background: "transparent", marginRight: "5px"}} color="primary"/>                                                                
+                                                                    <Chip label={technology} className="experienceChip" color="primary"/>                                                                
                                                                 </Grid>
                                                             )}
                                                         </Grid>
                                                     </div>
                                                 </Grid>
                                                 <Grid item>
-                                                    <div style={{position:"relative", left:"20vh", top: 10}}>
+                                                    <div className="experienceLocationTime">
                                                         <Typography variant="subtitle1" color="inherit" align="left">
                                                             {formatDate(experience.startTime)}-{formatDate(experience.endTime)} <br/>                                                                               
                                                         </Typography>
@@ -83,7 +82,6 @@ class Experiences extends Component{
                                             </Grid>                                                   
                                         </Paper> 
                                     </Fragment>)})}
-                    </div>
                 </div>
             </Fragment>
         );
