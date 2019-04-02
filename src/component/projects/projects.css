@@ -1,7 +1,32 @@
 .projectsWrapperDiv{
     /* min-height: 100vh; */
     overflow: hidden;
-    color: white;
-    background: black;
     position: relative;
+    top: 3vh;
+    left: 1vh;
+}
+
+.keywordsChip{
+
+    border: 2px solid white !important;
+    background-color: black !important;
+    margin-right: 5px;
+    color: white !important;
+}
+
+.projectDescription{
+    margin-bottom: 10px !important;
+}
+
+.projectCompany{
+    margin-left: 5px !important;
+}
+
+.projectPaper{
+    position: relative;
+    padding: 8px;
+    margin-top: 16px;
+    width: 98%;
+    border: 4px white solid;
+    background-color: black !important;
 }

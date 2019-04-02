@@ -22,48 +22,50 @@ class Extracurricular extends Component{
         let extracurricular=this.props.extracurricular.extracurricular;
         return (
             <div className="extracurricularWrapperDiv">
-                <div style={{ position: "relative", top:"3vh", left: "1%"}}>
-                    <Typography variant="h4" color="inherit" align="left" style={{position: "relative", color: "#eeeeee"}}>
-                        Extracurriculars:
-                    </Typography>
-                    {map(extracurricular,(activity,index) =><Paper square elevation={0} key={index} style={{position: "relative", padding: "8px" ,marginTop: 16, marginBottom: 0, marginLeft: 4, marginRight: 2, width: "98%", left: "0%", border:"4px white solid", background: "black"}}>
-
-                                <Typography variant="h5" color="inherit" align="left">
+                <Typography variant="h4" color="inherit">
+                    Extracurriculars:
+                </Typography>
+                {map(extracurricular,(activity,index) =>      
+                    <Paper square key={index} className="extracurricularPaper">
+                        <Grid container direction="column">
+                            <Grid item>
+                                <Typography variant="h5" color="inherit">
                                     {activity.organization}
                                 </Typography>                                                                
                                 <Grid container direction="row">
-                                            <Grid item>
-                                                <i className="material-icons">person</i>
-                                            </Grid>
-                                            <Grid item>
-                                                <Typography variant="subtitle1" color="inherit" align="left">
-                                                    {activity.position}
-                                                </Typography>
-                                            </Grid>
-                                </Grid>
-                                <Grid container>
-                                    <div style={{position:"absolute", right: "3vh", top: 10}}>
-                                        <Typography variant="subtitle1" color="inherit" align="left">
-                                            {activity.timeOfActivity}
+                                    <Grid item>
+                                        <i className="material-icons">person</i>
+                                    </Grid>
+                                    <Grid item>
+                                        <Typography variant="subtitle1" color="inherit">
+                                            {activity.position}
                                         </Typography>
-                                        <Grid container direction="row">
-                                            <Grid item>
-                                                <i className="material-icons">location_on</i>
-                                            </Grid>
-                                            <Grid item>
-                                                <Typography variant="subtitle1" color="inherit" align="left">
-                                                    {activity.state}, {activity.country}
-                                                </Typography>
-                                            </Grid>
-                                        </Grid>
-                                    </div>
+                                    </Grid>
                                 </Grid>
-                                <Typography variant="body2" color="inherit" align="left">
-                                    Description: &nbsp;
+                                <Typography variant="body2" color="inherit">
+                                    Description:
                                     <li>{activity.workDescription}</li>
                                 </Typography>
-                            </Paper>)}
-                </div>
+                            </Grid>
+                            <Grid item>
+                                <div className="extracurricularLocationTime">
+                                    <Typography variant="subtitle1" color="inherit">
+                                        {activity.timeOfActivity}
+                                    </Typography>
+                                    <Grid container direction="row">
+                                        <Grid item>
+                                            <i className="material-icons">location_on</i>
+                                        </Grid>
+                                        <Grid item>
+                                            <Typography variant="subtitle1" color="inherit">
+                                                {activity.state}, {activity.country}
+                                            </Typography>
+                                        </Grid>
+                                    </Grid>
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </Paper>)}
             </div>
         );
     } 
