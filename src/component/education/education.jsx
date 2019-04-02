@@ -58,11 +58,11 @@ class Education extends Component{
                                                                                     </Grid>
                                                                                 </Grid>
                                                                             </Grid>
-                                                                        </Grid>
-                                                                            
-                                                                            
+                                                                        </Grid> 
                                                                     </Grid>
-                                                                    
+                                                                    <Typography variant="subtitle1" color="inherit">
+                                                                        B.Tech in Information and Communication Technology (ICT)
+                                                                    </Typography>
                                                                     <Typography variant="button" color="inherit" align="left">
                                                                         CGPA: {institute.cgpa}
                                                                     </Typography>
