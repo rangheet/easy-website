@@ -75,7 +75,7 @@ class Education extends Component{
                                                                             <div style={{width: "1000px", display: "flex", flexWrap: "wrap"}}>
                                                                             {
                                                                                 map(filter(this.props.electives, (elective) => elective.institute===elective.instituteAbbr)[0], 
-                                                                                filteredElective => <Chip key={filteredElective.courseCode} label={`${filteredElective.name}`} className="coursesChip"/>)
+                                                                                filteredElective => <Chip key={filteredElective.courseCode} label={`${filteredElective.name}`} className="commonChip"/>)
                                                                             }
                                                                             </div>
                                                                         }
