@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { map, filter } from "lodash";
 import {Paper, Typography, Grid, Chip} from "@material-ui/core";
 import "./education.css";
+import "../../main-component.css";
 import { config } from "../../config";
 class Education extends Component{
 
@@ -25,7 +26,7 @@ class Education extends Component{
                     <Typography variant="h4" color="inherit" align="left">
                         Education:
                     </Typography>
-                    {map(education,(institute,index) => <Paper key={index} square className="educationPaper">
+                    {map(education,(institute,index) => <Paper key={index} square className="commonPaper">
                                                             <Grid container direction="row">
                                                                 <Grid item className="pictureContainer">
                                                                     <a href={institute.instituteLogo.url} target="_blank" ref="noopener"><img id={`${institute.instituteLogo.logoname}-logo`} className="logo-div" src= {institute.instituteLogo.filenameOnServer ? config.BackendEndpoint+institute.instituteLogo.filenameOnServer : undefined} alt={institute.instituteLogo.logoname}/></a>

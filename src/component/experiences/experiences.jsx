@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { formatDate } from "../../util";
 import { map } from "lodash";
 import "./experiences.css";
+import "../../main-component.css";
 import { Paper, Grid, Typography, Chip } from '@material-ui/core';
 import { config } from "../../config";
 
@@ -31,7 +32,7 @@ class Experiences extends Component{
                         {map(experiences,(experience,index) => {
 
                             return (<Fragment key={index}>
-                                        <Paper square className="experiencePaper">
+                                        <Paper square className="commonPaper">
                                             <Grid container direction="row">
                                                 <Grid item className="pictureContainer">
                                                     <a href={experience.companyLogo.url} target="_blank" ref="noopener"><img id={`${experience.companyLogo.logoname}-logo`} className="logo-div" src= {experience.companyLogo.filenameOnServer ? config.BackendEndpoint+experience.companyLogo.filenameOnServer : undefined} alt={experience.companyLogo.logoname}/></a>
@@ -56,7 +57,7 @@ class Experiences extends Component{
                                                         <Grid container direction="row" className="experienceTechSkillContainer">
                                                             {map(experience.technologies,(technology, index) => 
                                                                 <Grid item key={index}>
-                                                                    <Chip label={technology} className="experienceChip" color="primary"/>                                                                
+                                                                    <Chip label={technology} className="commonChip" color="primary"/>                                                                
                                                                 </Grid>
                                                             )}
                                                         </Grid>

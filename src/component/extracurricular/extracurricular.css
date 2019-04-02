@@ -3,14 +3,6 @@
     top: 3vh;
     left: 1%;
 }
-.extracurricularPaper{
-    position: relative;
-    padding: 8px;
-    margin-top: 16px;
-    width: 98%;
-    border: 4px white solid;
-    background-color: black !important;
-}
 
 .extracurricularLocationTime{
     position:absolute;

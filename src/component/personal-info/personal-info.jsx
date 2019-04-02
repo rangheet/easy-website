@@ -2,6 +2,7 @@ import React, { Component} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
 import "./personal-info.css";
+import "../../main-component.css";
 import { Grid, Typography, Button} from '@material-ui/core';
 import { config } from "../../config";
 
