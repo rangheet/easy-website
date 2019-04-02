@@ -54,3 +54,28 @@
   to{border-right-color: transparent;}
 }
 
+.bioContainer{
+    position: relative;
+    width: 80%;
+    left: 10%;
+}
+
+.bioButton{
+    margin-right:16px !important;
+}
+
+.bioResumeButton{
+    position: absolute;
+    top: 30vh;
+}
+
+.headerButtonContainer{
+    position: relative;
+    top: 35%;
+}
+
+.linksContainer{
+    position: relative;
+    top: 8%;
+    right: 5%;
+}
