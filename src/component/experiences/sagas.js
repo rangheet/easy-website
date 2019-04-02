@@ -76,7 +76,7 @@ function* getExperiences(){
                   "startTime": "1514887200000",
                   "endTime": "1526032800000",
                   "position": "Intern",
-                  "companyName": "Indian Space Research Organization (ISR0)",
+                  "companyName": "Indian Space Research Organization (ISRO)",
                   "mentorName": "Akhilesh Sharma",
                   "mentorContact": "NA",
                   "companyLogo": {
