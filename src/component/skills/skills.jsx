@@ -2,7 +2,7 @@ import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
 import { map } from "lodash";
-import { LinearProgress, Tabs, Tab } from "@material-ui/core";
+import { LinearProgress, Tabs, Tab, Typography } from "@material-ui/core";
 import "./skills.css";
 
 const tabs = Object.freeze({Language: 0, WebTech: 1, PM: 2, DevOpsTools: 3});
@@ -51,8 +51,9 @@ class Skills extends Component{
 
         return (
             <div className="skillsWrapper">
-                <div style={{position: "relative", top: "6vh", left: "1.5vh"}}>
-                    <h2>Skills: </h2>
+                    <Typography variant="h4" color="inherit">
+                        Skills:
+                    </Typography>
 
                     <Tabs value={this.state.skillTabs} onChange={this.handleChange}>
                         <Tab label="Languages" style={{outline: "none"}}/>
@@ -60,15 +61,14 @@ class Skills extends Component{
                         <Tab label="Project Managament" style={{outline: "none"}}/>
                         <Tab label="DevOps Tools" style={{outline: "none"}}/>
                     </Tabs>
-                    <div style={{position: "relative", padding: "10px", paddingBottom: "25px" ,marginTop: 16, marginBottom: 16, marginLeft: 4, marginRight: 2, width: "50%", left: "0%", border:"4px white solid", background: "black"}}>
-                       {map(skills,(skill,index) => <div key={index.toString()} style={{margin: 5}}> 
+                    <div className="skillsBarOuterDiv">
+                       {map(skills,(skill,index) => <div key={index.toString()} className="skillBar"> 
                                                             {skill.name}
                                                             <LinearProgress variant="determinate" value={skill.ratingOutOf10 * 10}></LinearProgress>
                                                     </div>)}
                     </div>
 
                 </div>
-            </div>
         );
     } 
 

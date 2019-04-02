@@ -1,11 +1,30 @@
 .educationWrapper{
-
-    color: white;
-    background: black;
+    
     position: relative;
-    min-height: 100vh;
+    min-height: 45vh;
     overflow: hidden;
+    top: 3vh;
+    left: 1%;
+    padding-bottom: 16px;
     /* top: 3vh;
     margin-bottom: 6vh; */
 
+}
+
+.educationLocationTime{
+    position: absolute;
+    right: 70px;
+    top: 10px;
+}
+
+.educationStartEndTime {
+    position: relative;
+    left: 7px;
+}
+
+.coursesContainer{
+
+    max-width: 100vh;
+    display: flex;
+    flex-wrap: wrap;
 }

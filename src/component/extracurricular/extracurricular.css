@@ -1,6 +1,11 @@
 .extracurricularWrapperDiv{
-    color: white;
-    background: black;
     position: relative;
-    min-height: 55vh;
+    top: 3vh;
+    left: 1%;
+}
+
+.extracurricularLocationTime{
+    position:absolute;
+    left: 90%;
+    top: 10%;
 }

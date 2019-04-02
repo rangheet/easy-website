@@ -1,11 +1,24 @@
 .experiencesWrapperDiv {
-    height: 100vh;
-    color: white;
-    background: black;
+    position: relative;
+    min-height: 100vh;
+    top: 3vh;
+    left: 1%;
+    padding-bottom: 50px;
     /* background: #eeeeee; */
 }
 
 .logo-div {
     height: 200px;
     width:  200px;
+}
+
+.experienceLocationTime{
+    position: absolute;
+    right: 70px;
+    top: 10px;
+}
+
+.experienceTechSkillContainer{
+    position: relative; 
+    top: 5vh;
 }

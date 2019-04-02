@@ -1,11 +1,48 @@
 .MainComponent {
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: black;
+    padding-bottom: 10vh;
 }
 
 .ProjectsSkillsWrapper {
-    color: white;
-    background: black;
     min-height: 160vh;
     overflow: hidden;
     padding-bottom: 10vh;
+}
+
+.commonPaper{
+    position: relative;
+    padding: 8px;
+    margin-top: 16px;
+    width: 98%;
+    border: 4px white solid;
+    background-color: black !important;
+}
+
+.linkIcon{
+    position: relative;
+    top: 5px;
+}
+
+.pictureDivider{
+    width:1px;
+    background: white;
+    height:50%;
+    margin-right: 15px !important;
+    position: relative;
+    top: 25%;
+}
+
+.pictureContainer{
+    max-width: 100%;
+    max-height: 100%;
+    margin-right: 15px !important; 
+}
+
+.commonChip{
+    border: 2px solid white !important;
+    background-color: black !important;
+    margin: 3px;
+    color: white !important;
 }
