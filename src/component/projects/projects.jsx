@@ -3,7 +3,7 @@ import { actions } from "./ducks";
 import { connect } from "react-redux";
 import { map } from "lodash";
 import {Tabs,Tab,Paper,Grid,Chip,Typography} from '@material-ui/core';
-
+import "../../main-component.css";
 import "./projects.css";
 
 let tab = Object.freeze({Academic: 0, Personal: 1});
@@ -39,8 +39,7 @@ class Projects extends Component{
 
         return (
             <div className="projectsWrapperDiv">
-                <div style={{ position: "relative", top:"3%", left: "1%"}}>
-                <Typography variant="h4" color="inherit" align="left" style={{position: "static", color: "#eeeeee", marginTop:"20px"}}>
+                <Typography variant="h4" color="inherit" align="left">
                             Projects:
                 </Typography>
 
@@ -52,7 +51,7 @@ class Projects extends Component{
                 
                 {map(displayProjects,(project,index) => 
                     <Fragment key={index.toString()}> 
-                        <Paper square elevation={0} style={{position: "relative", padding: "8px" ,marginTop: 16, marginBottom: 16, marginLeft: 4, marginRight: 2, width: "98%", left: "0%", border:"4px white solid", background: "black"}}>
+                        <Paper square className="commonPaper" >
                             <Typography variant="h5" color="inherit" align="left">
                                 {project.title}
                             </Typography>
@@ -62,12 +61,12 @@ class Projects extends Component{
                                         <i className="material-icons">school</i>
                                     </Grid>
                                     <Grid item>
-                                        <Typography variant="subtitle1" color="inherit" align="left" style={{marginLeft: "5px"}}>
+                                        <Typography variant="subtitle1" color="inherit" className="projectCompany">
                                             {project.company}
                                         </Typography>
                                     </Grid>
                                 </Grid>}        
-                            <Typography variant="body1" color="inherit" align="left" style={{marginBottom: 10}}>
+                            <Typography variant="body1" color="inherit" className="projectDescription">
                                 Description: {map(project.projectDescription, (descriptionItem,index) => 
                                                             <li key={index}>{descriptionItem}</li>
                                 )}
@@ -75,13 +74,12 @@ class Projects extends Component{
                             <Grid container direction="row">
                                 {map(project.technologies,(technology, index) => 
                                     <Grid item key={index}>
-                                        <Chip label={technology} style={{border: "2px solid white", background: "transparent", marginRight: "5px"}} color="primary"/>                                                                
+                                        <Chip label={technology} className="commonChip"/>                                                                
                                     </Grid>
                                 )}
                             </Grid>
                         </Paper>
                     </Fragment>)}
-                </div>
             </div>
         );
     } 

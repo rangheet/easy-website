@@ -1,7 +1,15 @@
 .projectsWrapperDiv{
     /* min-height: 100vh; */
     overflow: hidden;
-    color: white;
-    background: black;
     position: relative;
+    top: 3vh;
+    left: 1vh;
+}
+
+.projectDescription{
+    margin-bottom: 10px !important;
+}
+
+.projectCompany{
+    margin-left: 5px !important;
 }

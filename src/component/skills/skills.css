@@ -1,6 +1,21 @@
 .skillsWrapper{
-    color: white;
-    background: black;
     /* height: 100vh; */
     position: relative;
+    top: 6vh;
+    left: 1.5vh;
+    min-height: 20vh;
+}
+
+.skillBar{
+    margin: 5px;
+}
+
+.skillsBarOuterDiv{
+    position: relative;
+    padding: 10px;
+    padding-bottom: 25px;
+    margin-top: 16px;
+    width: 50%;
+    border: 4px white solid;
+    background: black;
 }

@@ -2,11 +2,9 @@ import React, { Component} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
 import "./personal-info.css";
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import "../../main-component.css";
+import { Grid, Typography, Button} from '@material-ui/core';
 import { config } from "../../config";
-import { Paper } from "@material-ui/core";
 
 
 
@@ -33,7 +31,7 @@ class PersonalInfo extends Component{
     {
         return (
             <div id="PersonalInfo" className="wrapperDiv" href="#PersonalInfo">
-                <Grid container spacing={16} justify="flex-end" style={{position: "relative", top: "8%", right: "5%"}}>
+                <Grid container spacing={16} justify="flex-end" className="linksContainer">
                     <Grid item>                                                                                     
                         <a href={this.props.logos.LinkedIn.url} target="_blank" ref="noopener"><img id="linkedin-logo" src={this.props.logos.LinkedIn.filenameOnServer ? config.BackendEndpoint+this.props.logos.LinkedIn.filenameOnServer : undefined} alt={this.props.logos.LinkedIn.logoname} /></a>
                     </Grid>
@@ -45,8 +43,8 @@ class PersonalInfo extends Component{
                     </Grid>           
                 </Grid>
                 
-                <Grid container justify="center" style={{position: "relative", top: "35%"}} direction="column" alignItems="center">
-                    <Grid item style={{}}>
+                <Grid container justify="center" className="headerButtonContainer" direction="column" alignItems="center">
+                    <Grid item>
                         <Typography variant="h3" color="inherit" align="center" className="line-1 anim-typewriter">
                                 Welcome to Sherlock's 221B
                         </Typography>
@@ -54,8 +52,8 @@ class PersonalInfo extends Component{
                             {this.props.personalInfo.name.toUpperCase()}
                         </Typography> */}
                     </Grid>
-                    <Grid container justify="center" style={{position: "absolute", top: "30vh"}}>
-                        <Grid item style={{marginRight:16}}>
+                    <Grid container justify="center" className="bioResumeButton">
+                        <Grid item className="bioButton">
                             <Button id="bio-button" variant="outlined" color="inherit" onClick={()=>{this.toggleShowBio()}} style={{outline: "none"}}>
                                 <Typography variant="button" color="inherit" align="center">
                                     Bio
@@ -70,22 +68,13 @@ class PersonalInfo extends Component{
                             </Button>
                         </Grid>
                         <Grid item style={{marginTop: "5vh"}}>
-                            { this.state.showBio && <Typography variant="body1" color="inherit" align="center" style={{position: "relative", width: "80%", left: "10%"}}>
+                            { this.state.showBio && <Typography variant="body1" color="inherit" align="center" className="bioContainer">
                                 {this.props.personalInfo.bio}
                             </Typography>
                             }
                         </Grid>
                     </Grid>                                           
                 </Grid>
-                
-                {/* <img id="profile-image" src={this.props.personalInfo.profileImage} alt="Profile Image" ></img>  <br/> */}
-                {/* Name: {this.props.personalInfo.name} <br/> */}
-                {/* Occupation: {this.props.personalInfo.occupation} <br/> */}
-                {/* Company: {this.props.personalInfo.company} <br/> */}
-                {/* Date of Birth: {formatDate(this.props.personalInfo.dateOfBirth)} <br/> */}
-                {/* <img id="github-logo" src="http://localhost:9000/github-logo-white.png" alt="GitHub Logo" /> */}
-                {/* <a href={this.props.personalInfo.linkedIn} target="_blank" ref="noopener">BIO</a> */}
-
             </div>
         );
     }
