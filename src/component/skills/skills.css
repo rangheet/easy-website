@@ -8,6 +8,7 @@
 
 .skillBar{
     margin: 5px;
+    margin-top: 10px;
 }
 
 .skillsBarOuterDiv{
@@ -18,4 +19,8 @@
     width: 50%;
     border: 4px white solid;
     background: black;
+}
+
+.linearProgressBar{
+    margin-top: 5px;
 }

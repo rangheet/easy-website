@@ -8,7 +8,6 @@ import Extracurricular from "./component/extracurricular/extracurricular";
 import Electives from "./component/electives/electives";
 import Skills from "./component/skills/skills";
 import  Logos from "./component/logos/logos";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import "./main-component.css";
 
