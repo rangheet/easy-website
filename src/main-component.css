@@ -29,15 +29,9 @@
     width:1px;
     background: white;
     height:50%;
-    margin-right: 15px !important;
+    margin-left: 15px !important;
     position: relative;
     top: 25%;
-}
-
-.pictureContainer{
-    max-width: 100%;
-    max-height: 100%;
-    margin-right: 15px !important; 
 }
 
 .commonChip{
@@ -48,6 +42,6 @@
 }
 
 .logo-div{
-    height: 27vh;
-    width:  27vh;
+    height: auto;
+    width:  13vw;
 }
