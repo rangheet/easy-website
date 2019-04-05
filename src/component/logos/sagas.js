@@ -20,17 +20,17 @@ function* getLogos(){
                 "LinkedIn": {
                   "url": "https://www.linkedin.com/in/heetdave/",
                   "logoname": "LinkedIn",
-                  "filenameOnServer": "linkedin-logo-white.svg"
+                  "filenameOnServer": "In-Black-128px-TM.png"
                 },
                 "Email": {
                   "url": "mailto:heetdave@outlook.com",
                   "logoname": "Email",
-                  "filenameOnServer": "email-icon.png"
+                  "filenameOnServer": "email-logo.png"
                 },
                 "Github": {
                   "url": "https://github.com/rangheet",
                   "logoname": "Github",
-                  "filenameOnServer": "github-logo-white.png"
+                  "filenameOnServer": "GitHub-Mark-120px-plus.png"
                 }
               };
         }
