@@ -29,7 +29,8 @@ function* getEducation(){
                     "logoname": "DA-IICT",
                     "filenameOnServer": "daiict-logo.jpg"
                   },
-                  "instituteAbbr": "DA-IICT"
+                  "instituteAbbr": "DA-IICT",
+                  "degree": "B.Tech in Information and Communication Technology (ICT)"
                 }
               ];
         }
