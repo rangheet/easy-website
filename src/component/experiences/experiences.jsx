@@ -34,11 +34,10 @@ class Experiences extends Component{
                             return (<Fragment key={index}>
                                         <Paper square className="commonPaper" elevation={0}>
                                             <Grid container direction="row">
-                                                <Grid item className="pictureContainer">
+                                                <Grid item lg={2} md={2} xs={12}>
                                                     <a href={experience.companyLogo.url} target="_blank" ref="noopener"><img id={`${experience.companyLogo.logoname}-logo`} className="logo-div" src= {experience.companyLogo.filenameOnServer ? config.BackendEndpoint+experience.companyLogo.filenameOnServer : undefined} alt={experience.companyLogo.logoname}/></a>
                                                 </Grid>
-                                                <Grid item>
-                                                    <div>
+                                                <Grid item item lg={8} md={10} xs={12}>
                                                         <Typography variant="h5" color="inherit" align="left">
                                                             {experience.companyName}
                                                             <a href={experience.companyLogo.url} target="_blank" ref="noopener" className="linkIcon"><i className="material-icons">link</i></a>
@@ -58,10 +57,8 @@ class Experiences extends Component{
                                                                 </Grid>
                                                             )}
                                                         </Grid>
-                                                    </div>
                                                 </Grid>
-                                                <Grid item>
-                                                    <div className="experienceLocationTime">
+                                                <Grid item lg={2} md={2} xs={12}>
                                                         <Typography variant="subtitle1" color="inherit" align="left">
                                                             {formatDate(experience.startTime)}-{formatDate(experience.endTime)} <br/>                                                                               
                                                         </Typography>
@@ -75,7 +72,6 @@ class Experiences extends Component{
                                                                 </Typography>
                                                             </Grid>
                                                         </Grid>
-                                                    </div>
                                                 </Grid>
                                             </Grid>                                                   
                                         </Paper> 

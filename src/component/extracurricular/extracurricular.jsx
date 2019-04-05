@@ -28,8 +28,8 @@ class Extracurricular extends Component{
                 </Typography>
                 {map(extracurricular,(activity,index) =>      
                     <Paper square key={index} className="commonPaper" elevation={0}>
-                        <Grid container direction="column">
-                            <Grid item>
+                        <Grid container direction="row">
+                            <Grid item md={10} xs={12}>
                                 <Typography variant="h5" color="inherit">
                                     {activity.organization}
                                 </Typography>                                                                
@@ -48,22 +48,20 @@ class Extracurricular extends Component{
                                     <li>{activity.workDescription}</li>
                                 </Typography>
                             </Grid>
-                            <Grid item>
-                                <div className="extracurricularLocationTime">
-                                    <Typography variant="subtitle1" color="inherit">
-                                        {activity.timeOfActivity}
-                                    </Typography>
-                                    <Grid container direction="row">
-                                        <Grid item>
-                                            <i className="material-icons">location_on</i>
-                                        </Grid>
-                                        <Grid item>
-                                            <Typography variant="subtitle1" color="inherit">
-                                                {activity.state}, {activity.country}
-                                            </Typography>
-                                        </Grid>
+                            <Grid item md={2} xs={12}>
+                                <Typography variant="subtitle1" color="inherit">
+                                    {activity.timeOfActivity}
+                                </Typography>
+                                <Grid container direction="row">
+                                    <Grid item>
+                                        <i className="material-icons">location_on</i>
                                     </Grid>
-                                </div>
+                                    <Grid item>
+                                        <Typography variant="subtitle1" color="inherit">
+                                            {activity.state}, {activity.country}
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Paper>)}

@@ -7,14 +7,9 @@
     /* background: #eeeeee; */
 }
 
-.experienceLocationTime{
-    position: absolute;
-    right: 70px;
-    top: 10px;
-}
-
 .experienceTechSkillContainer{
-    position: absolute; 
-    bottom: 0;
-    padding-bottom: 15px;
+    /* position: absolute;  */
+    /* bottom: 0; */
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
