@@ -26,13 +26,10 @@ class Education extends Component{
                     <Typography variant="h4" color="inherit" align="left">
                         Education:
                     </Typography>
-                    {map(education,(institute,index) => <Paper key={index} square className="commonPaper">
+                    {map(education,(institute,index) => <Paper key={index} square className="commonPaper" elevation={0}>
                                                             <Grid container direction="row">
                                                                 <Grid item className="pictureContainer">
                                                                     <a href={institute.instituteLogo.url} target="_blank" ref="noopener"><img id={`${institute.instituteLogo.logoname}-logo`} className="logo-div" src= {institute.instituteLogo.filenameOnServer ? config.BackendEndpoint+institute.instituteLogo.filenameOnServer : undefined} alt={institute.instituteLogo.logoname}/></a>
-                                                                </Grid>
-                                                                <Grid item>
-                                                                    <div className="pictureDivider"/>
                                                                 </Grid>
                                                                 <Grid item>
                                                                     <Typography variant="h5" color="inherit" align="left">
@@ -61,7 +58,7 @@ class Education extends Component{
                                                                         </Grid> 
                                                                     </Grid>
                                                                     <Typography variant="subtitle1" color="inherit">
-                                                                        B.Tech in Information and Communication Technology (ICT)
+                                                                        {institute.degree}
                                                                     </Typography>
                                                                     <Typography variant="button" color="inherit" align="left">
                                                                         CGPA: {institute.cgpa}

@@ -27,7 +27,7 @@ class Extracurricular extends Component{
                     Extracurriculars:
                 </Typography>
                 {map(extracurricular,(activity,index) =>      
-                    <Paper square key={index} className="commonPaper">
+                    <Paper square key={index} className="commonPaper" elevation={0}>
                         <Grid container direction="column">
                             <Grid item>
                                 <Typography variant="h5" color="inherit">

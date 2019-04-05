@@ -32,13 +32,10 @@ class Experiences extends Component{
                         {map(experiences,(experience,index) => {
 
                             return (<Fragment key={index}>
-                                        <Paper square className="commonPaper">
+                                        <Paper square className="commonPaper" elevation={0}>
                                             <Grid container direction="row">
                                                 <Grid item className="pictureContainer">
                                                     <a href={experience.companyLogo.url} target="_blank" ref="noopener"><img id={`${experience.companyLogo.logoname}-logo`} className="logo-div" src= {experience.companyLogo.filenameOnServer ? config.BackendEndpoint+experience.companyLogo.filenameOnServer : undefined} alt={experience.companyLogo.logoname}/></a>
-                                                </Grid>
-                                                <Grid item>
-                                                    <div className="pictureDivider"/>
                                                 </Grid>
                                                 <Grid item>
                                                     <div>

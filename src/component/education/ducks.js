@@ -7,7 +7,8 @@ const institute1 = {
     city: "Gandhinagar",
     state: "Gujarat",
     country: "India",
-    instituteLogo: {}
+    instituteLogo: {},
+    degree: ""
 };
 
 
