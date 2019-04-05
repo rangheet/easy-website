@@ -8,7 +8,6 @@ import Extracurricular from "./component/extracurricular/extracurricular";
 import Electives from "./component/electives/electives";
 import Skills from "./component/skills/skills";
 import  Logos from "./component/logos/logos";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import "./main-component.css";
 
@@ -19,16 +18,16 @@ class MainComponent extends Component{
         <Logos/>
         <Electives/>
         <PersonalInfo/>
-        <div style={{height:"1px", background: "white", width:"100%"}}/>
+        <div className="sectionDivider"/>
         <Experiences/>
-        <div style={{height:"1px", background: "white", width:"100%"}}/>
+        <div className="sectionDivider"/>
         <Education/>
-        <div style={{height:"1px", background: "white", width:"100%"}}/>
+        <div className="sectionDivider"/>
         <div className="ProjectsSkillsWrapper">
           <Projects/>
           <Skills/>
         </div>
-        <div style={{height:"1px", background: "white", width:"100%"}}/>
+        <div className="sectionDivider"/>
         <Extracurricular/>
       </div>
     );

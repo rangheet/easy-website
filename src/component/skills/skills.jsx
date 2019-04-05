@@ -64,7 +64,7 @@ class Skills extends Component{
                     <div className="skillsBarOuterDiv">
                        {map(skills,(skill,index) => <div key={index.toString()} className="skillBar"> 
                                                             {skill.name}
-                                                            <LinearProgress variant="determinate" value={skill.ratingOutOf10 * 10}></LinearProgress>
+                                                            <LinearProgress variant="determinate" value={skill.ratingOutOf10 * 10} className="linearProgressBar" />
                                                     </div>)}
                     </div>
 

@@ -51,7 +51,7 @@ class Projects extends Component{
                 
                 {map(displayProjects,(project,index) => 
                     <Fragment key={index.toString()}> 
-                        <Paper square className="commonPaper" >
+                        <Paper square className="commonPaper" elevation={0} >
                             <Typography variant="h5" color="inherit" align="left">
                                 {project.title}
                             </Typography>
