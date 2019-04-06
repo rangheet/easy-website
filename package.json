@@ -32,7 +32,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build"
   },
   "repository": {
