@@ -45,7 +45,7 @@ class PersonalInfo extends Component{
                 
                 <Grid container justify="center" className="headerButtonContainer" direction="column" alignItems="center">
                     <Grid item>
-                        <Typography variant="h3" color="inherit" align="center" className="line-1 anim-typewriter">
+                        <Typography variant="h3" color="inherit" align="center">
                                 Heet Dave
                         </Typography>
                         {/* <Typography variant="h1" color="inherit" align="center" >
