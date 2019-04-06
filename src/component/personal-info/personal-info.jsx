@@ -46,7 +46,7 @@ class PersonalInfo extends Component{
                 <Grid container justify="center" className="headerButtonContainer" direction="column" alignItems="center">
                     <Grid item>
                         <Typography variant="h3" color="inherit" align="center" className="line-1 anim-typewriter">
-                                Welcome to Sherlock's 221B
+                                Heet Dave
                         </Typography>
                         {/* <Typography variant="h1" color="inherit" align="center" >
                             {this.props.personalInfo.name.toUpperCase()}
