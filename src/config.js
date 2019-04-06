@@ -1,4 +1,4 @@
 
 export const config={
-    BackendEndpoint: "/PersonalWebsite/static-data/"
+    BackendEndpoint: "/static-data/"
 };
