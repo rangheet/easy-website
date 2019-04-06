@@ -1,5 +1,5 @@
 {
-  "name": "PersonalWebsite",
+  "name": "rangheet.github.io",
   "version": "1.0.0",
   "description": "This will be source code to my personal website",
   "main": "webpack.config.js",
@@ -32,17 +32,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rangheet/PersonalWebsite.git"
+    "url": "git+https://github.com/rangheet/rangheet.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rangheet/PersonalWebsite/issues"
+    "url": "https://github.com/rangheet/rangheet.github.io/issues"
   },
-  "homepage": "https://rangheet.github.io/PersonalWebsite"
+  "homepage": "https://rangheet.github.io"
 }
