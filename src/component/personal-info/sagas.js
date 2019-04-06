@@ -17,7 +17,7 @@ function* getPersonalInfo()
         if(personalInfo==="Error!")
         {
             personalInfo = {
-                bio: "I am HEET DAVE a.k.a. Sherlock. I am currently working at Endurance International Group as a Software Engineer. I am working on developing our new product using ReactJS and Java SpringBoot. I have experience with working on both front-end and back-end as well as CI/CD tools such as Docker and Jenkins. I did my undergraduate studies from DA-IICT, Gujarat. I have also worked in fields Information Retrieval, Machine Learning and Natural Language Processing during my internship at Indian Space Research Organization (ISRO).",
+                bio: "I am currently working at Endurance International Group as a Software Engineer. I am working on developing our new product using ReactJS and Java SpringBoot. I have experience with working on both front-end and back-end as well as CI/CD tools such as Docker and Jenkins. I did my undergraduate studies from DA-IICT, Gujarat. I have also worked in fields Information Retrieval, Machine Learning and Natural Language Processing during my internship at Indian Space Research Organization (ISRO).",
                 company: "Endurance International Group",
                 dateOfBirth: "856377000000",
                 name: "Heet Dave",
