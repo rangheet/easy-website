@@ -1,4 +1,4 @@
 
 export const config={
-    BackendEndpoint: "http://localhost:9000/"
+    BackendEndpoint: "http://18.188.246.76:9000/"
 };

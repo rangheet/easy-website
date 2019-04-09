@@ -1,9 +1,9 @@
 
 const projetct1 = {
-    title: "PT1",
-    company: "DA_IICT",
-    technologies: "T!T@",
-    projectDescription: "DESC1" 
+    title: "",
+    company: "",
+    technologies: [],
+    projectDescription: [] 
 };
 
 const projetct2 = {
@@ -14,8 +14,8 @@ const projetct2 = {
 };
 
 const initialState = {
-    personalProjects:[ projetct1 ],
-    academicProjects: [ projetct2 ]
+    personalProjects:[],
+    academicProjects: []
 };
 
 export const actionType = {

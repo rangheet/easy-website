@@ -2,7 +2,6 @@ import { call, takeEvery, put } from "redux-saga/effects";
 import { api } from "../../api";
 import { config } from "../../config";
 import { actionType, actions } from "./ducks";
-import { forEach } from "lodash";
 
 export const skillsSagas = [
     takeEvery(actionType.GET_SKILLS, getSkills)
@@ -26,7 +25,7 @@ function segregateSkills(skills){
 
     let languageSkills = [], webTechSkills = [], PMSkills = [], DevOpsTools = [];
 
-    forEach(skills, (skill)=> {
+    skills.forEach(skill => {
         if(skill.category==="Language")        
             languageSkills.push(skill);
         else if(skill.category==="PM")

@@ -13,7 +13,7 @@ const institute1 = {
 
 
 const initialState = {
-    education: [ institute1 ]
+    education: []
 };
 
 export const actionType = {

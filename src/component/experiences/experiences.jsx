@@ -2,7 +2,6 @@ import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
 import { formatDate } from "../../util";
-import { map } from "lodash";
 import "./experiences.css";
 import "../../main-component.css";
 import { Paper, Grid, Typography, Chip } from '@material-ui/core';
@@ -29,7 +28,7 @@ class Experiences extends Component{
                         <Typography variant="h4" color="inherit" align="left">
                                 Experiences:
                         </Typography>
-                        {map(experiences,(experience,index) => {
+                        {experiences.map((experience,index) => {
 
                             return (<Fragment key={index}>
                                         <Paper square className="commonPaper" elevation={0}>
@@ -46,12 +45,12 @@ class Experiences extends Component{
                                                             {experience.position}
                                                         </Typography>
                                                         <Typography variant="body1" color="inherit" align="left">
-                                                            {map(experience.workDescription, (descriptionItem,index) => 
+                                                            {experience.workDescription.map((descriptionItem,index) => 
                                                                 <li key={index}>{descriptionItem}</li>
                                                             )}
                                                         </Typography>
                                                         <Grid container direction="row" className="experienceTechSkillContainer">
-                                                            {map(experience.technologies,(technology, index) => 
+                                                            {experience.technologies.map((technology, index) => 
                                                                 <Grid item key={index}>
                                                                     <Chip label={technology} className="commonChip" color="primary"/>                                                                
                                                                 </Grid>

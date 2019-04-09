@@ -1,7 +1,6 @@
 import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
-import { map } from "lodash";
 import {Paper, Typography, Grid} from "@material-ui/core";
 import "./extracurricular.css";
 import "../../main-component.css";
@@ -26,7 +25,7 @@ class Extracurricular extends Component{
                 <Typography variant="h4" color="inherit">
                     Extracurriculars:
                 </Typography>
-                {map(extracurricular,(activity,index) =>      
+                {extracurricular.map((activity,index) =>      
                     <Paper square key={index} className="commonPaper" elevation={0}>
                         <Grid container direction="row">
                             <Grid item md={10} xs={12}>
