@@ -22,10 +22,7 @@ export const api={
                     
             })
             .then(response => response)
-            .catch(error => { 
-                console.log("APAPAPA", error);
-                return "Error!"; 
-            });
+            .catch(error => { throw(error) });
     }
     
 };
