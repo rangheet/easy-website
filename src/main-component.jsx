@@ -15,9 +15,9 @@ class MainComponent extends Component{
   render(){
     return(
       <div className="MainComponent">
+        <PersonalInfo/>
         <Logos/>
         <Electives/>
-        <PersonalInfo/>
         <div className="sectionDivider"/>
         <Experiences/>
         <div className="sectionDivider"/>
