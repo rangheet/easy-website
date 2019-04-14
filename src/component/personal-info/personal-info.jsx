@@ -33,13 +33,13 @@ class PersonalInfo extends Component{
             <div id="PersonalInfo" className="wrapperDiv" href="#PersonalInfo">
                 <Grid container spacing={16} justify="flex-end" className="linksContainer">
                     <Grid item>                                                                                     
-                        <a href={this.props.logos.LinkedIn.url} target="_blank" ref="noopener"><img id="linkedin-logo" src={this.props.logos.LinkedIn.filenameOnServer ? config.BackendEndpoint+this.props.logos.LinkedIn.filenameOnServer : undefined} alt={this.props.logos.LinkedIn.logoname} /></a>
+                        <a href={this.props.logos.LinkedIn.url} target="_blank" ref="noopener"><img id="linkedin-logo" src={this.props.logos.LinkedIn.filenameOnServer ? config.StaticDataLoadingEndPoint+this.props.logos.LinkedIn.filenameOnServer : undefined} alt={this.props.logos.LinkedIn.logoname} /></a>
                     </Grid>
                     <Grid item> 
-                        <a href={this.props.logos.Github.url} target="_blank" ref="noopener"><img id="github-logo" src={this.props.logos.Github.filenameOnServer ? config.BackendEndpoint+this.props.logos.Github.filenameOnServer : undefined} alt={this.props.logos.Github.logoname} /></a>
+                        <a href={this.props.logos.Github.url} target="_blank" ref="noopener"><img id="github-logo" src={this.props.logos.Github.filenameOnServer ? config.StaticDataLoadingEndPoint+this.props.logos.Github.filenameOnServer : undefined} alt={this.props.logos.Github.logoname} /></a>
                     </Grid>       
                     <Grid item> 
-                        <a href={this.props.logos.Email.url}><img id="email-logo" src={this.props.logos.Email.filenameOnServer ? config.BackendEndpoint+this.props.logos.Email.filenameOnServer : undefined} alt={this.props.logos.Email.logoname} /></a>
+                        <a href={this.props.logos.Email.url}><img id="email-logo" src={this.props.logos.Email.filenameOnServer ? config.StaticDataLoadingEndPoint+this.props.logos.Email.filenameOnServer : undefined} alt={this.props.logos.Email.logoname} /></a>
                     </Grid>           
                 </Grid>
                 
@@ -61,7 +61,7 @@ class PersonalInfo extends Component{
                             </Button>
                         </Grid>
                         <Grid item>
-                            <Button id="resume-button" variant="outlined" color="inherit" href={config.BackendEndpoint + this.props.personalInfo.resume} target="_blank" ref="noopener" style={{outline: "none"}}>
+                            <Button id="resume-button" variant="outlined" color="inherit" href={config.StaticDataLoadingEndPoint + this.props.personalInfo.resume} target="_blank" ref="noopener" style={{outline: "none"}}>
                                 <Typography variant="button" color="inherit" align="center">
                                     Resume
                                 </Typography>
