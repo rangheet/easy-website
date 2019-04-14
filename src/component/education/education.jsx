@@ -1,7 +1,6 @@
 import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
-import { map, filter } from "lodash";
 import {Paper, Typography, Grid, Chip} from "@material-ui/core";
 import "./education.css";
 import "../../main-component.css";
@@ -26,7 +25,7 @@ class Education extends Component{
                     <Typography variant="h4" color="inherit" align="left">
                         Education:
                     </Typography>
-                    {map(education,(institute,index) => <Paper key={index} square className="commonPaper" elevation={0}>
+                    {education.map((institute,index) => <Paper key={index} square className="commonPaper" elevation={0}>
                                                             <Grid container direction="row">
                                                                 <Grid item lg={2} md={2} xs={12}>
                                                                     <a href={institute.instituteLogo.url} target="_blank" ref="noopener"><img id={`${institute.instituteLogo.logoname}-logo`} className="logo-div" src= {institute.instituteLogo.filenameOnServer ? config.BackendEndpoint+institute.instituteLogo.filenameOnServer : undefined} alt={institute.instituteLogo.logoname}/></a>
@@ -37,7 +36,7 @@ class Education extends Component{
                                                                         <a href={institute.instituteLogo.url} target="_blank" ref="noopener" className="linkIcon"><i className="material-icons">link</i></a>
                                                                     </Typography>
                                                                     <Typography variant="subtitle1" color="inherit">
-                                                                        B.Tech in Information and Communication Technology (ICT)
+                                                                        {institute.degree}
                                                                     </Typography>
                                                                     <Typography variant="button" color="inherit" align="left">
                                                                         CGPA: {institute.cgpa}
@@ -45,7 +44,7 @@ class Education extends Component{
                                                                         Coursework:
                                                                         <Grid container direction="row" >
                                                                         {      
-                                                                            map(filter(this.props.electives, (elective) => elective.institute===elective.instituteAbbr)[0], 
+                                                                            this.props.electives.electives.filter((elective) => elective.institute===institute.instituteAbbr).map( 
                                                                             filteredElective => <Grid item key={filteredElective.courseCode}><Chip label={`${filteredElective.name}`} className="commonChip"/></Grid>)
                                                                         }
                                                                         </Grid>

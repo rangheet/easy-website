@@ -1,8 +1,6 @@
-import React, { Component, Fragment} from "react";
+import React, { Component} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
-import { map } from "lodash";
-import {Typography, Chip, Avatar} from '@material-ui/core';
 
 class Electives extends Component{
 

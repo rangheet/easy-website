@@ -1,12 +1,10 @@
-import { SlowBuffer } from "buffer";
-import { config } from "../../config";
 
 const InitialState={
-    name: "Heet Dave",
-    occupation: "[From InitialState] SE",
-    dateOfBirth: "[From InitialState] 20-Feb-1997",
-    company: "[From InitialState] Endurance",
-    bio: "[From InitialState] MYBIO",
+    name: "",
+    occupation: "",
+    dateOfBirth: "",
+    company: "",
+    bio: "",
     resume: ""
 };
 

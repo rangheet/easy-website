@@ -1,14 +1,4 @@
 
-const skill1 = {
-    name: "JAVASCRIPT",
-    ratingOutOf10: "8"
-};
-
-const skill2 = {
-    name: "HTML",
-    ratingOutOf10: "9"
-};
-
 const initialState = {
     languageSkills: [],
     webTechSkills: [],

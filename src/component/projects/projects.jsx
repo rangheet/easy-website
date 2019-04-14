@@ -1,7 +1,6 @@
 import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
-import { map } from "lodash";
 import {Tabs,Tab,Paper,Grid,Chip,Typography} from '@material-ui/core';
 import "../../main-component.css";
 import "./projects.css";
@@ -49,7 +48,7 @@ class Projects extends Component{
                 </Tabs>
                     
                 
-                {map(displayProjects,(project,index) => 
+                {displayProjects.map((project,index) => 
                     <Fragment key={index.toString()}> 
                         <Paper square className="commonPaper" elevation={0} >
                             <Typography variant="h5" color="inherit" align="left">
@@ -67,12 +66,12 @@ class Projects extends Component{
                                     </Grid>
                                 </Grid>}        
                             <Typography variant="body1" color="inherit" className="projectDescription">
-                                Description: {map(project.projectDescription, (descriptionItem,index) => 
+                                Description: {project.projectDescription.map((descriptionItem,index) => 
                                                             <li key={index}>{descriptionItem}</li>
                                 )}
                             </Typography>
                             <Grid container direction="row">
-                                {map(project.technologies,(technology, index) => 
+                                {project.technologies.map((technology, index) => 
                                     <Grid item key={index}>
                                         <Chip label={technology} className="commonChip"/>                                                                
                                     </Grid>

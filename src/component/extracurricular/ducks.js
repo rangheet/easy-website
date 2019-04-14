@@ -19,7 +19,7 @@ const extracurricularActivity2 = {
 
 
 const initialState = {
-    extracurricular: [ extracurricularActivity1, extracurricularActivity2 ]
+    extracurricular: []
 };
 
 export const actionType = {

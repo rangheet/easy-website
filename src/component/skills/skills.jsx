@@ -1,7 +1,6 @@
 import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
-import { map } from "lodash";
 import { LinearProgress, Tabs, Tab, Typography } from "@material-ui/core";
 import "./skills.css";
 
@@ -62,7 +61,7 @@ class Skills extends Component{
                         <Tab label="DevOps Tools" style={{outline: "none"}}/>
                     </Tabs>
                     <div className="skillsBarOuterDiv">
-                       {map(skills,(skill,index) => <div key={index.toString()} className="skillBar"> 
+                       {skills.map((skill,index) => <div key={index.toString()} className="skillBar"> 
                                                             {skill.name}
                                                             <LinearProgress variant="determinate" value={skill.ratingOutOf10 * 10} className="linearProgressBar" />
                                                     </div>)}

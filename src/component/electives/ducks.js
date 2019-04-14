@@ -12,7 +12,7 @@ const elective2 = {
 };
 
 const initialState = {
-    electives:[ elective1, elective2 ]
+    electives:[]
 };
 
 export const actionType = {

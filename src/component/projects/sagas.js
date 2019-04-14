@@ -2,8 +2,6 @@ import { call, takeEvery, put } from "redux-saga/effects";
 import { api } from "../../api";
 import { config } from "../../config";
 import { actionType, actions } from "./ducks";
-import { map, forEach, cloneDeep } from "lodash";
-
 
 export const projectsSagas = [
     takeEvery(actionType.GET_PROJECTS, getProjects)
@@ -91,7 +89,7 @@ function segregateProjects(allProjects){
 
     let personalProjects = [], academicProjects = [];
 
-    forEach(allProjects, (project)=> {
+    allProjects.forEach(project => {
         if(project.projectType==="Personal")        
             personalProjects.push(project);
         else

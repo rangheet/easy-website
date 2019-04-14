@@ -16,7 +16,7 @@ const experience2 = {
 };
 
 const initialState = {
-    allExperiences:[ experience1, experience2 ]
+    allExperiences:[]
 };
 
 export const actionType = {
