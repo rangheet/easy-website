@@ -1,7 +1,7 @@
 {
-  "name": "rangheet.github.io",
+  "name": "wasy-website",
   "version": "1.0.0",
-  "description": "This will be source code to my personal website",
+  "description": "Source code to easy website frontend",
   "main": "webpack.config.js",
   "dependencies": {
     "@babel/runtime": "^7.3.4",
@@ -36,13 +36,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rangheet/rangheet.github.io.git"
+    "url": "git+https://github.com/rangheet/easy-website.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rangheet/rangheet.github.io/issues"
+    "url": "https://github.com/rangheet/easy-website/issues"
   },
-  "homepage": "https://rangheet.github.io"
+  "homepage": "https://rangheet.github.io/easy-website/"
 }

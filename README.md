@@ -1,2 +1,2 @@
-# personal-website
-This will be source code to my personal website
+# easy-website
+Source code to easy website frontend
