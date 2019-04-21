@@ -8,11 +8,14 @@ import Extracurricular from "./component/extracurricular/extracurricular";
 import Electives from "./component/electives/electives";
 import Skills from "./component/skills/skills";
 import  Logos from "./component/logos/logos";
-
+import { HashRouter, Route } from "react-router-dom";
 import "./main-component.css";
 
 class MainComponent extends Component{
   render(){
+
+    console.log("USERBNAME", this.props.match.params.username);
+
     return(
       <div className="MainComponent">
         <PersonalInfo/>
@@ -34,4 +37,14 @@ class MainComponent extends Component{
   }
 }
 
-export default hot(module)(MainComponent);
+class Root extends Component{
+  render(){
+    return (
+      <div>
+        <Route exact path="/:username" component={MainComponent} />
+      </div>
+    );
+  }
+}
+
+export default hot(module)(Root);
