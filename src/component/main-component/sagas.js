@@ -15,6 +15,16 @@ function* getWebsiteData()
     console.log("getWebsiteData called");
     const mainState = yield select(state => state.main);
     const websiteData = yield services.GetWebsiteData(mainState);
+
+    for(let key in websiteData)
+    {
+        if(key!=="username")
+        {
+            console.log("KEEY",key, websiteData[key]);
+            websiteData[key] = JSON.parse(websiteData[key]);
+        }
+    }
+
     console.log("FROM MAIN COMPINENT", websiteData);
     yield put(actions.setUserWebsiteData(websiteData));
 }
