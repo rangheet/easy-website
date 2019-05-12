@@ -2,7 +2,7 @@ import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
 import {Tabs,Tab,Paper,Grid,Chip,Typography} from '@material-ui/core';
-import "../../main-component.css";
+import "../main-component/main-component.css";
 import "./projects.css";
 
 let tab = Object.freeze({Academic: 0, Personal: 1});

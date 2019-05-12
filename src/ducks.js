@@ -7,6 +7,8 @@ import { extracurricularReducer } from "./component/extracurricular/ducks";
 import { electivesReducer } from "./component/electives/ducks";
 import { skillsReducer } from "./component/skills/ducks";
 import { logosReducer } from "./component/logos/ducks";
+import { mainReducer } from "./component/main-component/ducks";
+
 
 export const reducer = combineReducers({
     personalInfo: personalInfoReducer,
@@ -16,5 +18,6 @@ export const reducer = combineReducers({
     extracurricular: extracurricularReducer,
     electives: electivesReducer,
     skills: skillsReducer,
-    logos: logosReducer
+    logos: logosReducer,
+    main: mainReducer
 });

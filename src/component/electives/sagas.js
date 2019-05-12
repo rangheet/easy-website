@@ -1,4 +1,4 @@
-import { call, takeEvery, put } from "redux-saga/effects";
+import { call, takeEvery, put, select } from "redux-saga/effects";
 import { api } from "../../api";
 import { config } from "../../config";
 import { actionType, actions } from "./ducks";
@@ -12,7 +12,8 @@ export const electivesSagas = [
 function* getElectives(){
 
     try{
-        const electives = yield call(() => api.get(`${config.BackendEndpoint}api/Electives`));
+        const mainState = yield select(state => state.main);
+        const electives = yield call(() => api.get(`${config.BackendEndpoint}api/Electives`, mainState));
         yield put(actions.updateElectives(electives));
     }
     catch(error)

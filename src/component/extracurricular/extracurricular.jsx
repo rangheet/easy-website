@@ -3,7 +3,7 @@ import { actions } from "./ducks";
 import { connect } from "react-redux";
 import {Paper, Typography, Grid} from "@material-ui/core";
 import "./extracurricular.css";
-import "../../main-component.css";
+import "../main-component/main-component.css";
 
 class Extracurricular extends Component{
 

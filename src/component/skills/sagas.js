@@ -1,7 +1,8 @@
-import { call, takeEvery, put } from "redux-saga/effects";
+import { call, takeEvery, put, select } from "redux-saga/effects";
 import { api } from "../../api";
 import { config } from "../../config";
 import { actionType, actions } from "./ducks";
+import { services } from "../../services";
 
 export const skillsSagas = [
     takeEvery(actionType.GET_SKILLS, getSkills)
@@ -11,8 +12,9 @@ export const skillsSagas = [
 function* getSkills(){
 
     try{
-        const skills = yield call(() => api.get(`${config.BackendEndpoint}api/Skills`));
-        yield put(actions.updateSkills(segregateSkills(skills)));
+        const mainState = yield select(state => state.main);
+        const skills = (yield services.GetWebsiteData(mainState)).skills;
+        yield put(actions.updateSkills(segregateSkills(JSON.parse(skills))));
     }
     catch(error)
     {

@@ -3,7 +3,7 @@ import { actions } from "./ducks";
 import { connect } from "react-redux";
 import { formatDate } from "../../util";
 import "./experiences.css";
-import "../../main-component.css";
+import "../main-component/main-component.css";
 import { Paper, Grid, Typography, Chip } from '@material-ui/core';
 import { config } from "../../config";
 

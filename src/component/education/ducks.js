@@ -8,7 +8,8 @@ const institute1 = {
     state: "Gujarat",
     country: "India",
     instituteLogo: {},
-    degree: ""
+    degree: "",
+    electives: []
 };
 
 
