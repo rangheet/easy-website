@@ -7,6 +7,8 @@ import { electivesSagas } from "./component/electives/sagas";
 import { skillsSagas } from "./component/skills/sagas";
 import { logosSagas } from "./component/logos/sagas";
 import { mainComponentSagas } from "./component/main-component/sagas";
+import { submitWebsiteDataSagas } from "./component/submit-website-data/sagas";
+
 import { all } from "redux-saga/effects";
 
 const saga = [
@@ -18,7 +20,8 @@ const saga = [
     // ...electivesSagas,
     // ...skillsSagas,
     // ...logosSagas,
-    ...mainComponentSagas
+    ...mainComponentSagas,
+    ...submitWebsiteDataSagas
 ];
 
 

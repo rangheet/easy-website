@@ -22,10 +22,10 @@ class PersonalInfo extends Component{
         this.toggleShowBio=this.toggleShowBio.bind(this);
     }
 
-    componentDidMount()
-    {
-        this.props.getPersonalInfo();
-    }
+    // componentDidMount()
+    // {
+    //     // this.props.getPersonalInfo();
+    // }
 
     render()
     {
@@ -87,7 +87,6 @@ class PersonalInfo extends Component{
 
 function mapStateToProps(state)
 {
-    console.log("STATE IN PERDSONLA", state);
     return { 
         personalInfo: state.personalInfo,
         logos: state.logos     

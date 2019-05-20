@@ -1,5 +1,5 @@
 
-const InitialState={
+ export const InitialState={
     name: "",
     occupation: "",
     dateOfBirth: "",

@@ -14,7 +14,6 @@ function* getExperiences(){
     try{
         const mainState = yield select(state => state.main);
         const experiences = (yield services.GetWebsiteData(mainState)).experiences;
-        //console.log("EXPERIENCE", JSON.parse(experiences));
         yield put(actions.updateExperiences(JSON.parse(experiences)));
     }
     catch(error)

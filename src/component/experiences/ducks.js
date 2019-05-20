@@ -1,22 +1,7 @@
 
-const experience1 = {
-    company: 'Endurance',
-    position: 'SE',
-    duration: '2 mos',
-    companyLogo: {},
-    workDescription: []
-};
 
-const experience2 = {
-    company: 'Fintech',
-    position: 'SE',
-    duration: '8 mos',
-    companyLogo: {},
-    workDescription: []
-};
-
-const initialState = {
-    allExperiences:[]
+export const initialState = {
+    experiences:[]
 };
 
 export const actionType = {

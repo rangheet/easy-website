@@ -5,6 +5,7 @@ import PersonalInfo from "../personal-info/personal-info";
 import Projects from "../projects/projects";
 import Education from "../education/education";
 import Extracurricular from "../extracurricular/extracurricular";
+import SubmitWebsiteData from "../submit-website-data//submit-website-data";
 import Electives from "../electives/electives";
 import Skills from "../skills/skills";
 import  Logos from "../logos/logos";
@@ -26,9 +27,6 @@ class MainComponent extends Component{
   }
 
   render(){
-
-    console.log("USERBNAME", this.props.match.params.username);
-
     return(
       <div className="MainComponent">
         <PersonalInfo/>
@@ -55,6 +53,7 @@ class Root extends Component{
     return (
       <div>
         <Route exact path="/:username" component={MainComponent} />
+        <Route exact path="/:username/submit" component={SubmitWebsiteData} />
       </div>
     );
   }

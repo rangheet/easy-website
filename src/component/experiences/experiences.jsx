@@ -14,14 +14,14 @@ class Experiences extends Component{
         super(props);
     }
 
-    componentDidMount()
-    {
-        this.props.getExperiences();
-    }
+    // componentDidMount()
+    // {
+    //     // this.props.getExperiences();
+    // }
 
     render()
     {
-        let experiences=this.props.experiences.allExperiences;
+        let experiences=this.props.experiences;
         return (
             <Fragment>
                 <div id="Experiences" className="experiencesWrapperDiv" >

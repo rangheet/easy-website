@@ -12,14 +12,14 @@ class Extracurricular extends Component{
         super(props);
     }
 
-    componentDidMount()
-    {
-        this.props.getExtracurricular();
-    }
+    // componentDidMount()
+    // {
+    //     // this.props.getExtracurricular();
+    // }
 
     render()
     {
-        let extracurricular=this.props.extracurricular.extracurricular;
+        let extracurricular=this.props.extracurricular;
         return (
             <div className="extracurricularWrapperDiv">
                 <Typography variant="h4" color="inherit">

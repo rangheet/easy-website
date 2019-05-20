@@ -23,7 +23,7 @@ function* getSkills(){
 }
 
 
-function segregateSkills(skills){
+export function segregateSkills(skills){
 
     let languageSkills = [], webTechSkills = [], PMSkills = [], DevOpsTools = [];
 

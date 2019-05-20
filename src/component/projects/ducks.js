@@ -1,19 +1,5 @@
 
-const projetct1 = {
-    title: "",
-    company: "",
-    technologies: [],
-    projectDescription: [] 
-};
-
-const projetct2 = {
-    title: "PT12",
-    company: "DA_IICT",
-    technologies: "T!T@",
-    projectDescription: "DESC2" 
-};
-
-const initialState = {
+export const initialState = {
     personalProjects:[],
     academicProjects: []
 };

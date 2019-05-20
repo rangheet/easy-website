@@ -1,5 +1,26 @@
+
+import { segregateSkills } from "../skills//sagas";
+import { segregateProjects } from "../projects/sagas"
+import { InitialState as personalInfo } from "../personal-info/ducks";
+import { initialState as education } from "../education/ducks";
+import { initialState as experiences } from "../experiences/ducks";
+import { initialState as logos } from "../logos/ducks";
+import { initialState as projects } from "../projects/ducks";
+import { initialState as skills } from "../skills/ducks";
+import { initialState as extracurricular } from "../extracurricular/ducks";
+
+extracurricular
+
+
 const initialState = {
-    username: ""    
+    username: "",
+    personalInfo,
+    education: education.education,
+    experiences: experiences.experiences,
+    logos,
+    projects,
+    skills,
+    extracurricular: extracurricular.extracurricular
 }
 
 export const actionType = {
@@ -18,7 +39,6 @@ export const actions = {
     },
     getUserWebsiteData(payload)
     {
-        console.log("IN action");
         return {
             type: actionType.GET_USER_WEBSITE_DATA,
             payload
@@ -38,16 +58,16 @@ export function mainReducer(state = initialState, action)
     switch(action.type)
     {
         case actionType.SET_USERNAME:
-            console.log("ACTION", action);
             return {
                 ...state,
                 username: action.payload.username
             };
         case actionType.SET_USER_WEBSITE_DATA:
-            console.log("SET_USER_WEBSITE_DATA", action.payload);
             return {
                 ...state,
-                ...action.payload
+                ...action.payload,
+                skills: segregateSkills(action.payload.skills),
+                projects: segregateProjects(action.payload.projects)
             }
         default:
             return {...state};

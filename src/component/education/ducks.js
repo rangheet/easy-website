@@ -1,19 +1,6 @@
 
-const institute1 = {
-    name: "DA-IICT",
-    start: 2014,
-    end: 2018,
-    cgpa: 7.06,
-    city: "Gandhinagar",
-    state: "Gujarat",
-    country: "India",
-    instituteLogo: {},
-    degree: "",
-    electives: []
-};
 
-
-const initialState = {
+export const initialState = {
     education: []
 };
 

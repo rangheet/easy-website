@@ -12,15 +12,14 @@ class Education extends Component{
         super(props);
     }
 
-    componentDidMount()
-    {
-        this.props.getEducation();
-    }
+    // componentDidMount()
+    // {
+    //     // this.props.getEducation();
+    // }
 
     render()
     {
-        let education=this.props.education.education;
-        console.log("EDUCATIOn", education);
+        let education=this.props.education;
         return (
             <div className="educationWrapper">
                     <Typography variant="h4" color="inherit" align="left">

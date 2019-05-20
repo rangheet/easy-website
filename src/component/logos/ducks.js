@@ -1,5 +1,5 @@
 
-const initialState = {
+export const initialState = {
     LinkedIn: {},
     Github: {},
     Email: {}

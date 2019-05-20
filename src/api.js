@@ -20,7 +20,6 @@ export const api={
             }
         }
         
-        //console.log("PAPAPAPARMAS", path);
         return fetch(path, defaultGetReqParam)
             .then(response => {
                 if(response.ok)

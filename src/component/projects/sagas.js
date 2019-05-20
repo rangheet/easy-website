@@ -22,7 +22,7 @@ function* getProjects(){
     }
 }
 
-function segregateProjects(allProjects){
+export function segregateProjects(allProjects){
 
     let personalProjects = [], academicProjects = [];
 

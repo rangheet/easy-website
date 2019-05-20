@@ -13,9 +13,7 @@ function* getPersonalInfo()
     try
     {
         const mainState = yield select(state => state.main);
-        //console.log("MAIN SATTE", mainState);
         const personalInfo = (yield services.GetWebsiteData(mainState)).personalInfo;
-        //console.log("PERSONAL INFO", JSON.parse(personalInfo));
         yield put(actions.updatePersonalInfoAction(JSON.parse(personalInfo)));
     }
     catch(error)

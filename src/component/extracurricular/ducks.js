@@ -1,24 +1,6 @@
 
-const extracurricularActivity1 = {
-    organization: "Agaria Heet Rakshak Manch",
-    timeOfActivity: "Dec 2015",
-    position: "Volunteer",
-    workDescription: "Volunteer work",
-    state: "Gujarat",
-    country: "India"
-};
 
-const extracurricularActivity2 = {
-    organization: "Synapse",
-    timeOfActivity: "2016-2017",
-    position: "Core committee member",
-    workDescription: "Synapse work",
-    state: "Gujarat",
-    country: "India"
-};
-
-
-const initialState = {
+export const initialState = {
     extracurricular: []
 };
 
