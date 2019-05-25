@@ -37,7 +37,7 @@
 .bioContainer{
     position: relative;
     width: 80%;
-    left: 10%;
+    top: 35vh;
 }
 
 .bioButton{
@@ -45,7 +45,7 @@
 }
 
 .bioResumeButton{
-    position: absolute;
+    position: relative;
     top: 30vh;
 }
 
