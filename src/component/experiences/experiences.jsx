@@ -34,7 +34,7 @@ class Experiences extends Component{
                                         <Paper square className="commonPaper" elevation={0}>
                                             <Grid container direction="row">
                                                 <Grid item lg={2} md={2} xs={12}>
-                                                    <a href={experience.companyLogo.url} target="_blank" ref="noopener"><img id={`${experience.companyLogo.logoname}-logo`} className="logo-div" src= {experience.companyLogo.filenameOnServer ? config.StaticDataLoadingEndPoint+experience.companyLogo.filenameOnServer : undefined} alt={experience.companyLogo.logoname}/></a>
+                                                    <a href={experience.companyLogo.url} target="_blank" ref="noopener"><img id={`${experience.companyLogo.logoname}-logo`} className="logo-div" src= {experience.companyLogo.filenameOnServer ? experience.companyLogo.filenameOnServer : undefined} alt={experience.companyLogo.logoname}/></a>
                                                 </Grid>
                                                 <Grid item item lg={8} md={10} xs={12}>
                                                         <Typography variant="h5" color="inherit" align="left">

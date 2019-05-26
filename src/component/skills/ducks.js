@@ -1,10 +1,12 @@
 
-export const initialState = {
-    languageSkills: [],
-    webTechSkills: [],
-    PMSkills: [],
-    DevOpsTools: []
-};
+// export const initialState = {
+//     // languageSkills: [],
+//     // webTechSkills: [],
+//     // PMSkills: [],
+//     // DevOpsTools: []
+// };
+
+export const initialState = [];
 
 export const actionType = {
     GET_SKILLS: "[Skills] Get Skills",

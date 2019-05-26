@@ -1,6 +1,7 @@
 import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
+import { segregateProjects } from "./sagas";
 import {Tabs,Tab,Paper,Grid,Chip,Typography} from '@material-ui/core';
 import "../main-component/main-component.css";
 import "./projects.css";
@@ -80,7 +81,7 @@ class Projects extends Component{
 
 function mapStateToProps(state)
 {
-    return { projects: state.projects }; 
+    return { projects: segregateProjects(state.projects) }; 
 }
 
 function mapDispatchToProps(dispatch)

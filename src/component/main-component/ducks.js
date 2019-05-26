@@ -62,9 +62,7 @@ export function mainReducer(state = initialState, action)
         case actionType.SET_USER_WEBSITE_DATA:
             return {
                 ...state,
-                ...action.payload,
-                skills: segregateSkills(action.payload.skills),
-                projects: segregateProjects(action.payload.projects)
+                ...action.payload
             }
         default:
             return {...state};

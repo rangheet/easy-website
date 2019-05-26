@@ -1,6 +1,7 @@
 import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
+import { segregateSkills } from "./sagas";
 import { LinearProgress, Tabs, Tab, Typography } from "@material-ui/core";
 import "./skills.css";
 
@@ -56,7 +57,7 @@ class Skills extends Component{
 
 function mapStateToProps(state)
 {
-    return { skills: state.skills }; 
+    return { skills: segregateSkills(state.skills) }; 
 }
 
 function mapDispatchToProps(dispatch)

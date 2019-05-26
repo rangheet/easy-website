@@ -1,8 +1,11 @@
 
-export const initialState = {
-    personalProjects:[],
-    academicProjects: []
-};
+// export const initialState = {
+//     personalProjects:[],
+//     academicProjects: []
+// };
+
+export const initialState = []
+
 
 export const actionType = {
     GET_PROJECTS: "[Projects] Get Projects",

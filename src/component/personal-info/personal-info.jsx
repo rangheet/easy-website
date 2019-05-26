@@ -59,7 +59,7 @@ class PersonalInfo extends Component{
                                 </Button>
                             </Grid>
                             <Grid item>
-                                <Button id="resume-button" variant="outlined" color="inherit" href={config.StaticDataLoadingEndPoint + this.props.personalInfo.resume} target="_blank" ref="noopener" style={{outline: "none"}}>
+                                <Button id="resume-button" variant="outlined" color="inherit" href={this.props.personalInfo.resume} target="_blank" ref="noopener" style={{outline: "none"}}>
                                     <Typography variant="button" color="inherit" align="center">
                                         Resume
                                     </Typography>
