@@ -10,10 +10,10 @@ export const mainComponentSagas = [
 ];
 
 
-function* getWebsiteData()
+function* getWebsiteData(action)
 {
-    const mainState = yield select(state => ({username: state.username}));
-    const websiteData = yield services.GetWebsiteData(mainState);
+    // const mainState = yield select(state => ({username: state.username}));
+    const websiteData = yield services.GetWebsiteData(action.payload);
 
     for(let key in websiteData)
     {

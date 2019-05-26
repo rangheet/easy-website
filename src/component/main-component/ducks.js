@@ -9,9 +9,6 @@ import { initialState as projects } from "../projects/ducks";
 import { initialState as skills } from "../skills/ducks";
 import { initialState as extracurricular } from "../extracurricular/ducks";
 
-extracurricular
-
-
 const initialState = {
     username: "",
     personalInfo,

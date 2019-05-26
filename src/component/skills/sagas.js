@@ -27,6 +27,9 @@ export function segregateSkills(skills){
 
     let languageSkills = [], webTechSkills = [], PMSkills = [], DevOpsTools = [];
 
+    if(!skills)
+        return null;
+
     skills.forEach(skill => {
         if(skill.category==="Language")        
             languageSkills.push(skill);

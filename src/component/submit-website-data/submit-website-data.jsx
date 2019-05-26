@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { actions } from "./ducks";
+import { actions as mainComponentActions} from "../main-component/ducks"
 import { connect } from "react-redux";
 import { Grid, Typography, Button, Paper, TextField} from '@material-ui/core';
 import "./submit-website-data.css";
@@ -12,13 +13,18 @@ class SubmitWebsiteData extends Component {
         this.state = {
             personalInfo: '{"bio": "", "name": "", "resume": "", "company": "", "occupation": "", "dateOfBirth": "", "profileImage": ""}',
             experiences: '[{ "endTime": "", "location": "", "position": "", "startTime": "", "mentorName": "", "companyLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "companyName": "", "technologies": [ "" ], "mentorContact": "", "workDescription": [ "" ]}]',
-            education: '[ { "cgpa": 0, "city": "", "state": "", "degree": "", "country": "", "endYear": 0, "electives": [ { "name": "", "institute": "", "courseCode": "" } ], "startYear": 0, "instituteAbbr": "", "instituteLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "instituteName": "" } ]',
-            skills: '[ { "name": "", "category": "", "ratingOutOf10": 0 } ]',
-            projects: '[ { "title": "", "company": "", "projectType": "", "technologies": [ "" ], "projectDescription": [ "" ] } ]',
-            logos: '{ "Email": { "url": "mailto:", "logoname": "Email", "filenameOnServer": "email-icon.png" }, "Github": { "url": "", "logoname": "Github", "filenameOnServer": "github-logo-white.png" }, "LinkedIn": { "url": "", "logoname": "LinkedIn", "filenameOnServer": "linkedin-logo-white.svg" } }',
-            extracurricular: '[ { "state": "", "country": "", "position": "", "organization": "", "timeOfActivity": "", "workDescription": "" } ]'
+            education: '[{ "cgpa": 0, "city": "", "state": "", "degree": "", "country": "", "endYear": 0, "electives": [ { "name": "", "institute": "", "courseCode": "" } ], "startYear": 0, "instituteAbbr": "", "instituteLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "instituteName": "" } ]',
+            skills: '[{ "name": "", "category": "", "ratingOutOf10": 0 } ]',
+            projects: '[{ "title": "", "company": "", "projectType": "", "technologies": [ "" ], "projectDescription": [ "" ] } ]',
+            logos: '{"Email": { "url": "mailto:", "logoname": "Email", "filenameOnServer": "email-icon.png" }, "Github": { "url": "", "logoname": "Github", "filenameOnServer": "github-logo-white.png" }, "LinkedIn": { "url": "", "logoname": "LinkedIn", "filenameOnServer": "linkedin-logo-white.svg" } }',
+            extracurricular: '[{ "state": "", "country": "", "position": "", "organization": "", "timeOfActivity": "", "workDescription": "" } ]'
         };
         this.handleChange =  this.handleChange.bind(this);
+    }
+
+    componentDidMount()
+    {
+        this.props.getUserWebsiteData({username: this.props.match.params.username})
     }
 
     handleChange(event)
@@ -28,6 +34,7 @@ class SubmitWebsiteData extends Component {
 
     render()
     {
+        // console.log("STATE", this.props, this.props.experiences !== null ?  JSON.stringify(this.props.experiences) : this.state.experiences);
         return (
             <Fragment>
 
@@ -42,7 +49,7 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            defaultValue = '{"bio": "", "name": "", "resume": "", "company": "", "occupation": "", "dateOfBirth": "", "profileImage": ""}'
+                            value = {this.props.personalInfo ?  JSON.stringify(this.props.personalInfo) : this.state.personalInfo}
                             onChange = {this.handleChange}
                             required
                             />
@@ -58,7 +65,7 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            defaultValue = '[{ "endTime": "", "location": "", "position": "", "startTime": "", "mentorName": "", "companyLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "companyName": "", "technologies": [ "" ], "mentorContact": "", "workDescription": [ "" ]}]'
+                            value = {this.props.experiences ?  JSON.stringify(this.props.experiences) : this.state.experiences}
                             onChange = {this.handleChange}
                             required
                             />
@@ -74,7 +81,7 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            defaultValue = '[{ "cgpa": 0, "city": "", "state": "", "degree": "", "country": "", "endYear": 0, "electives": [ { "name": "", "institute": "", "courseCode": "" } ], "startYear": 0, "instituteAbbr": "", "instituteLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "instituteName": "" } ]'
+                            value = {this.props.education ?  JSON.stringify(this.props.education) : this.state.education}
                             onChange = {this.handleChange}
                             required
                             />
@@ -90,7 +97,7 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            defaultValue = '[ { "title": "", "company": "", "projectType": "", "technologies": [ "" ], "projectDescription": [ "" ] } ]'
+                            value = {this.props.projects ?  JSON.stringify(this.props.projects) : this.state.projects}
                             onChange = {this.handleChange}
                             required
                             />
@@ -106,7 +113,7 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            defaultValue = '[ { "name": "", "category": "", "ratingOutOf10": 0 } ]'
+                            value = {this.props.skills ?  JSON.stringify(this.props.skills) : this.state.skills}
                             onChange = {this.handleChange}
                             required
                             />
@@ -122,7 +129,7 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            defaultValue = '{ "Email": { "url": "mailto:", "logoname": "Email", "filenameOnServer": "email-icon.png" }, "Github": { "url": "", "logoname": "Github", "filenameOnServer": "github-logo-white.png" }, "LinkedIn": { "url": "", "logoname": "LinkedIn", "filenameOnServer": "linkedin-logo-white.svg" } }'
+                            value = {this.props.logos ?  JSON.stringify(this.props.logos) : this.state.logos}
                             onChange = {this.handleChange}
                             required
                             />
@@ -138,7 +145,7 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            defaultValue = '[ { "state": "", "country": "", "position": "", "organization": "", "timeOfActivity": "", "workDescription": "" } ]'
+                            value = {this.props.extracurricular ?  JSON.stringify(this.props.extracurricular) : this.state.extracurricular}
                             onChange = {this.handleChange}
                             required
                             />
@@ -158,4 +165,4 @@ class SubmitWebsiteData extends Component {
 
 }
 
-export default connect(null, actions)(SubmitWebsiteData);
+export default connect((state) => state , {...actions, ...mainComponentActions})(SubmitWebsiteData);

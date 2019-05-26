@@ -26,6 +26,9 @@ export function segregateProjects(allProjects){
 
     let personalProjects = [], academicProjects = [];
 
+    if(!allProjects)
+        return null;
+
     allProjects.forEach(project => {
         if(project.projectType==="Personal")        
             personalProjects.push(project);
