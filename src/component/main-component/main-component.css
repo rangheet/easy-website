@@ -1,0 +1,64 @@
+.MainComponent {
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    background: white;
+    padding-bottom: 10vh;
+}
+
+/* .ProjectsSkillsWrapper {
+    min-height: 140vh;
+    overflow: hidden;
+    padding-bottom: 10vh;
+} */
+
+.commonPaper{
+    position: relative;
+    padding: 8px;
+    margin-top: 16px;
+    width: 96%;
+    border-top: 1px #d9d9d9 solid;
+    background-color: white !important;
+}
+
+.linkIcon{
+    position: relative;
+    top: 5px;
+    color: black;
+}
+
+
+.commonChip{
+    border: 1.25px solid #c0c0c0 !important;
+    background-color: white !important;
+    margin: 3px;
+    color: black !important;
+}
+
+.logo-div{
+    height: auto;
+    width:  13vw;
+}
+
+.sectionDivider{
+    height: 1px;
+    background: black;
+    width:100%;
+}
+
+.sectionHeader{
+    color: #004aa9 !important;
+    font-weight: bold !important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    text-transform: uppercase ;
+    letter-spacing: 5px !important;
+}
+
+.commonPaper h5 {
+    color: grey !important;
+}
+
+ .secondHeading {
+    font-weight: bold !important;
+    color: #ff6700 !important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+ }

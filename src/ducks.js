@@ -7,14 +7,19 @@ import { extracurricularReducer } from "./component/extracurricular/ducks";
 import { electivesReducer } from "./component/electives/ducks";
 import { skillsReducer } from "./component/skills/ducks";
 import { logosReducer } from "./component/logos/ducks";
+import { mainReducer } from "./component/main-component/ducks";
 
-export const reducer = combineReducers({
-    personalInfo: personalInfoReducer,
-    experiences: experiencesReducer, 
-    projects: projectsReducer,
-    education: educationReducer,
-    extracurricular: extracurricularReducer,
-    electives: electivesReducer,
-    skills: skillsReducer,
-    logos: logosReducer
-});
+
+// export const reducer = combineReducers({
+//     personalInfo: personalInfoReducer,
+//     experiences: experiencesReducer, 
+//     projects: projectsReducer,
+//     education: educationReducer,
+//     extracurricular: extracurricularReducer,
+//     electives: electivesReducer,
+//     skills: skillsReducer,
+//     logos: logosReducer,
+//     main: mainReducer
+// });
+
+export const reducer = mainReducer;

@@ -3,7 +3,7 @@ import { actions } from "./ducks";
 import { connect } from "react-redux";
 import {Paper, Typography, Grid} from "@material-ui/core";
 import "./extracurricular.css";
-import "../../main-component.css";
+import "../main-component/main-component.css";
 
 class Extracurricular extends Component{
 
@@ -12,17 +12,17 @@ class Extracurricular extends Component{
         super(props);
     }
 
-    componentDidMount()
-    {
-        this.props.getExtracurricular();
-    }
+    // componentDidMount()
+    // {
+    //     // this.props.getExtracurricular();
+    // }
 
     render()
     {
-        let extracurricular=this.props.extracurricular.extracurricular;
+        let extracurricular=this.props.extracurricular;
         return (
             <div className="extracurricularWrapperDiv">
-                <Typography variant="h4" color="inherit">
+                <Typography variant="h4" color="inherit" className="sectionHeader">
                     Extracurriculars:
                 </Typography>
                 {extracurricular.map((activity,index) =>      
@@ -37,7 +37,7 @@ class Extracurricular extends Component{
                                         <i className="material-icons">person</i>
                                     </Grid>
                                     <Grid item>
-                                        <Typography variant="subtitle1" color="inherit">
+                                        <Typography variant="subtitle1" color="inherit" className="secondHeading">
                                             {activity.position}
                                         </Typography>
                                     </Grid>

@@ -3,7 +3,7 @@ import { actions } from "./ducks";
 import { connect } from "react-redux";
 import {Paper, Typography, Grid, Chip} from "@material-ui/core";
 import "./education.css";
-import "../../main-component.css";
+import "../main-component/main-component.css";
 import { config } from "../../config";
 class Education extends Component{
 
@@ -12,17 +12,17 @@ class Education extends Component{
         super(props);
     }
 
-    componentDidMount()
-    {
-        this.props.getEducation();
-    }
+    // componentDidMount()
+    // {
+    //     // this.props.getEducation();
+    // }
 
     render()
     {
-        let education=this.props.education.education;
+        let education=this.props.education;
         return (
             <div className="educationWrapper">
-                    <Typography variant="h4" color="inherit" align="left">
+                    <Typography variant="h4" color="inherit" align="left"  className="sectionHeader">
                         Education:
                     </Typography>
                     {education.map((institute,index) => <Paper key={index} square className="commonPaper" elevation={0}>
@@ -35,7 +35,7 @@ class Education extends Component{
                                                                         {institute.instituteName}
                                                                         <a href={institute.instituteLogo.url} target="_blank" ref="noopener" className="linkIcon"><i className="material-icons">link</i></a>
                                                                     </Typography>
-                                                                    <Typography variant="subtitle1" color="inherit">
+                                                                    <Typography variant="subtitle1" color="inherit" className="secondHeading">
                                                                         {institute.degree}
                                                                     </Typography>
                                                                     <Typography variant="button" color="inherit" align="left">
@@ -44,7 +44,7 @@ class Education extends Component{
                                                                         Coursework:
                                                                         <Grid container direction="row" >
                                                                         {      
-                                                                            this.props.electives.electives.filter((elective) => elective.institute===institute.instituteAbbr).map( 
+                                                                            institute.electives.map( 
                                                                             filteredElective => <Grid item key={filteredElective.courseCode}><Chip label={`${filteredElective.name}`} className="commonChip"/></Grid>)
                                                                         }
                                                                         </Grid>
@@ -81,8 +81,8 @@ class Education extends Component{
 
 function mapStateToProps(state)
 {
-    return { education: state.education,
-             electives: state.electives
+    return { education: state.education
+             //electives: state.electives
     }; 
 }
 

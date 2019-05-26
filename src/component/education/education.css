@@ -1,11 +1,11 @@
 .educationWrapper{
     
     position: relative;
-    min-height: 45vh;
+    /* min-height: 45vh; */
     overflow: hidden;
     top: 3vh;
     left: 1%;
-    padding-bottom: 5vh;
+    padding-bottom: 10vh;
     /* top: 3vh;
     margin-bottom: 6vh; */
 

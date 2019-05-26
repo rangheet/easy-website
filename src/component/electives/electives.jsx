@@ -9,10 +9,10 @@ class Electives extends Component{
         super(props);
     }
 
-    componentDidMount()
-    {
-        this.props.getElectives();
-    }
+    // componentDidMount()
+    // {
+    //     // this.props.getElectives();
+    // }
 
     render()
     {

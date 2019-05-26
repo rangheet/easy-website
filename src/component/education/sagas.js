@@ -1,7 +1,8 @@
-import { call, takeEvery, put } from "redux-saga/effects";
+import { call, takeEvery, put, select } from "redux-saga/effects";
 import { api } from "../../api";
 import { config } from "../../config";
 import { actionType, actions } from "./ducks";
+import { services } from "../../services";
 
 
 export const educationSagas = [
@@ -12,8 +13,9 @@ export const educationSagas = [
 function* getEducation(){
 
     try{
-        const education = yield call(() => api.get(`${config.BackendEndpoint}api/Education`));
-        yield put(actions.updateEducation(education));
+        const mainState = yield select(state => state.main);
+        const education = (yield services.GetWebsiteData(mainState)).education;
+        yield put(actions.updateEducation(JSON.parse(education)));
     }
     catch(error)
     {

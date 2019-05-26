@@ -3,7 +3,7 @@ import { actions } from "./ducks";
 import { connect } from "react-redux";
 import { formatDate } from "../../util";
 import "./experiences.css";
-import "../../main-component.css";
+import "../main-component/main-component.css";
 import { Paper, Grid, Typography, Chip } from '@material-ui/core';
 import { config } from "../../config";
 
@@ -14,18 +14,18 @@ class Experiences extends Component{
         super(props);
     }
 
-    componentDidMount()
-    {
-        this.props.getExperiences();
-    }
+    // componentDidMount()
+    // {
+    //     // this.props.getExperiences();
+    // }
 
     render()
     {
-        let experiences=this.props.experiences.allExperiences;
+        let experiences=this.props.experiences;
         return (
             <Fragment>
                 <div id="Experiences" className="experiencesWrapperDiv" >
-                        <Typography variant="h4" color="inherit" align="left">
+                        <Typography variant="h4" color="inherit" align="left" className="sectionHeader">
                                 Experiences:
                         </Typography>
                         {experiences.map((experience,index) => {
@@ -41,7 +41,7 @@ class Experiences extends Component{
                                                             {experience.companyName}
                                                             <a href={experience.companyLogo.url} target="_blank" ref="noopener" className="linkIcon"><i className="material-icons">link</i></a>
                                                         </Typography>
-                                                        <Typography variant="subtitle1" color="inherit" align="left">
+                                                        <Typography variant="subtitle1" color="inherit" align="left" className="secondHeading">
                                                             {experience.position}
                                                         </Typography>
                                                         <Typography variant="body1" color="inherit" align="left">

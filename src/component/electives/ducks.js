@@ -1,17 +1,5 @@
 
-const elective1 = {
-    name: "E1",
-    courseCode: "IT-105",
-    institute: "DA-IICT",
-};
-
-const elective2 = {
-    name: "E2",
-    courseCode: "IT-110",
-    institute: "DA-IICT",
-};
-
-const initialState = {
+export const initialState = {
     electives:[]
 };
 

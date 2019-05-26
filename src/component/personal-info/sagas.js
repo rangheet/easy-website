@@ -1,7 +1,8 @@
-import { takeEvery, put, call } from "redux-saga/effects";
+import { takeEvery, put, call, select } from "redux-saga/effects";
 import { actionType, actions } from "./ducks";
 import { api } from "../../api";
 import { config } from "../../config";
+import { services } from "../../services";
 
 export const personalInfoSagas = [
     takeEvery(actionType.READ_PERSONALINFO, getPersonalInfo)
@@ -11,8 +12,9 @@ function* getPersonalInfo()
 {
     try
     {
-        const personalInfo = yield call(() => api.get(`${config.BackendEndpoint}api/PersonalInfo`));
-        yield put(actions.updatePersonalInfoAction(personalInfo));
+        const mainState = yield select(state => state.main);
+        const personalInfo = (yield services.GetWebsiteData(mainState)).personalInfo;
+        yield put(actions.updatePersonalInfoAction(JSON.parse(personalInfo)));
     }
     catch(error)
     {

@@ -1,5 +1,5 @@
 
 export const config={
-    BackendEndpoint: "https://localhost:9000/",
-    StaticDataLoadingEndPoint: "https://localhost:9000/"
+    BackendEndpoint: "http://localhost:9000/",
+    StaticDataLoadingEndPoint: "http://localhost:9000/"
 };

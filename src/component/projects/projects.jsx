@@ -2,26 +2,26 @@ import React, { Component, Fragment} from "react";
 import { actions } from "./ducks";
 import { connect } from "react-redux";
 import {Tabs,Tab,Paper,Grid,Chip,Typography} from '@material-ui/core';
-import "../../main-component.css";
+import "../main-component/main-component.css";
 import "./projects.css";
 
-let tab = Object.freeze({Academic: 0, Personal: 1});
+let tab = ["academicProjects", "personalProjects"];
 class Projects extends Component{
 
     constructor(props)
     {
         super(props);
         this.state = {
-            projectTab: tab.Academic
+            projectTab: 0
         };
         this.switchTab=this.switchTab.bind(this);
     }
 
 
-    componentDidMount()
-    {
-        this.props.getProjects();
-    }
+    // componentDidMount()
+    // {
+    //     // this.props.getProjects();
+    // }
 
     switchTab(event, value){
         this.setState({projectTab: value});
@@ -29,16 +29,9 @@ class Projects extends Component{
 
     render()
     {
-        let projects=this.props.projects.allProjects;
-        let displayProjects=[]
-        if(this.state.projectTab===tab.Academic)
-            displayProjects = this.props.projects.academicProjects;
-        else    
-            displayProjects = this.props.projects.personalProjects;
-
         return (
             <div className="projectsWrapperDiv">
-                <Typography variant="h4" color="inherit" align="left">
+                <Typography variant="h4" color="inherit" align="left" className="sectionHeader">
                             Projects:
                 </Typography>
 
@@ -48,7 +41,7 @@ class Projects extends Component{
                 </Tabs>
                     
                 
-                {displayProjects.map((project,index) => 
+                {this.props.projects[tab[this.state.projectTab]].map((project,index) => 
                     <Fragment key={index.toString()}> 
                         <Paper square className="commonPaper" elevation={0} >
                             <Typography variant="h5" color="inherit" align="left">
@@ -60,7 +53,7 @@ class Projects extends Component{
                                         <i className="material-icons">school</i>
                                     </Grid>
                                     <Grid item>
-                                        <Typography variant="subtitle1" color="inherit" className="projectCompany">
+                                        <Typography variant="subtitle1" color="inherit" className="projectCompany" className="secondHeading">
                                             {project.company}
                                         </Typography>
                                     </Grid>

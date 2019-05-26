@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 
 class Logos extends Component{
     
-    componentDidMount()
-    {
-        this.props.getLogos();
-    }
+    // componentDidMount()
+    // {
+    //     // this.props.getLogos();
+    // }
     render()
     {
         return null;

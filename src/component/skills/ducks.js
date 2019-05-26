@@ -1,5 +1,5 @@
 
-const initialState = {
+export const initialState = {
     languageSkills: [],
     webTechSkills: [],
     PMSkills: [],
