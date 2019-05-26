@@ -3,7 +3,8 @@
     position: relative;
     top: 6vh;
     left: 1.5vh;
-    min-height: 20vh;
+    /* min-height: 20vh; */
+    padding-bottom: 10vh;
 }
 
 .skillBar{

@@ -1,9 +1,9 @@
 .experiencesWrapperDiv {
     position: relative;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     top: 3vh;
     left: 1%;
-    padding-bottom: 50px;
+    padding-bottom: 10vh;
     /* background: #eeeeee; */
 }
 
