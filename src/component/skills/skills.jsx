@@ -31,7 +31,7 @@ class Skills extends Component{
     {
         return (
             <div className="skillsWrapper">
-                    <Typography variant="h4" color="inherit">
+                    <Typography variant="h4" color="inherit" className="sectionHeader">
                         Skills:
                     </Typography>
 
