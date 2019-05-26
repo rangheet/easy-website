@@ -1,40 +1,82 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, useEffect, useState } from "react";
 import { actions } from "./ducks";
 import { actions as mainComponentActions} from "../main-component/ducks"
 import { connect } from "react-redux";
 import { Grid, Typography, Button, Paper, TextField} from '@material-ui/core';
 import "./submit-website-data.css";
 
-class SubmitWebsiteData extends Component {
 
-    constructor(props)
+
+
+function SubmitWebsiteData(props) {
+
+
+    let initialState = {
+        personalInfo: '{"bio": "", "name": "", "resume": "", "company": "", "occupation": "", "dateOfBirth": "", "profileImage": ""}',
+        experiences: '[{ "endTime": "", "location": "", "position": "", "startTime": "", "mentorName": "", "companyLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "companyName": "", "technologies": [ "" ], "mentorContact": "", "workDescription": [ "" ]}]',
+        education: '[{ "cgpa": 0, "city": "", "state": "", "degree": "", "country": "", "endYear": 0, "electives": [ { "name": "", "institute": "", "courseCode": "" } ], "startYear": 0, "instituteAbbr": "", "instituteLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "instituteName": "" } ]',
+        skills: '[{ "name": "", "category": "", "ratingOutOf10": 0 } ]',
+        projects: '[{ "title": "", "company": "", "projectType": "", "technologies": [ "" ], "projectDescription": [ "" ] } ]',
+        logos: '{"Email": { "url": "mailto:", "logoname": "Email", "filenameOnServer": "email-icon.png" }, "Github": { "url": "", "logoname": "Github", "filenameOnServer": "github-logo-white.png" }, "LinkedIn": { "url": "", "logoname": "LinkedIn", "filenameOnServer": "linkedin-logo-white.svg" } }',
+        extracurricular: '[{ "state": "", "country": "", "position": "", "organization": "", "timeOfActivity": "", "workDescription": "" } ]'
+    };
+
+    let [state, updateState]  =  useState(
+        initialState
+    );
+
+    useEffect(() => {
+        props.getUserWebsiteData({username: props.match.params.username});
+    }, []);
+    
+
+    useEffect(() => {
+        // console.log("props Updated", props, JSON.stringify(props.experiences));
+        
+        updateState({
+            personalInfo: props.personalInfo ? JSON.stringify(props.personalInfo) : initialState.personalInfo,
+            education: props.education ? JSON.stringify(props.education) : initialState.education,
+            experiences: props.experiences ? JSON.stringify(props.experiences) : initialState.experiences,
+            logos: props.logos ? JSON.stringify(props.logos) : initialState.logos,
+            projects: props.projects ? JSON.stringify(props.projects) : initialState.projects,
+            skills: props.skills ? JSON.stringify(props.skills) : initialState.skills,
+            extracurricular: props.extracurricular ? JSON.stringify(props.extracurricular) : initialState.extracurricular
+        });
+    }, [props]);
+
+    // constructor(props)
+    // {
+    //     super(props);
+    //     console.log("CONSOLE PROPS", props);
+    //     state = {
+    //         personalInfo: '{"bio": "", "name": "", "resume": "", "company": "", "occupation": "", "dateOfBirth": "", "profileImage": ""}',
+    //         experiences: '[{ "endTime": "", "location": "", "position": "", "startTime": "", "mentorName": "", "companyLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "companyName": "", "technologies": [ "" ], "mentorContact": "", "workDescription": [ "" ]}]',
+    //         education: '[{ "cgpa": 0, "city": "", "state": "", "degree": "", "country": "", "endYear": 0, "electives": [ { "name": "", "institute": "", "courseCode": "" } ], "startYear": 0, "instituteAbbr": "", "instituteLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "instituteName": "" } ]',
+    //         skills: '[{ "name": "", "category": "", "ratingOutOf10": 0 } ]',
+    //         projects: '[{ "title": "", "company": "", "projectType": "", "technologies": [ "" ], "projectDescription": [ "" ] } ]',
+    //         logos: '{"Email": { "url": "mailto:", "logoname": "Email", "filenameOnServer": "email-icon.png" }, "Github": { "url": "", "logoname": "Github", "filenameOnServer": "github-logo-white.png" }, "LinkedIn": { "url": "", "logoname": "LinkedIn", "filenameOnServer": "linkedin-logo-white.svg" } }',
+    //         extracurricular: '[{ "state": "", "country": "", "position": "", "organization": "", "timeOfActivity": "", "workDescription": "" } ]'
+    //     };
+    //     handleChange =  handleChange.bind(this);
+    // }
+
+    // componentDidMount()
+    // {
+    //     props.getUserWebsiteData({username: props.match.params.username})
+    // }
+
+    function handleChange(event)
     {
-        super(props);
-        this.state = {
-            personalInfo: '{"bio": "", "name": "", "resume": "", "company": "", "occupation": "", "dateOfBirth": "", "profileImage": ""}',
-            experiences: '[{ "endTime": "", "location": "", "position": "", "startTime": "", "mentorName": "", "companyLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "companyName": "", "technologies": [ "" ], "mentorContact": "", "workDescription": [ "" ]}]',
-            education: '[{ "cgpa": 0, "city": "", "state": "", "degree": "", "country": "", "endYear": 0, "electives": [ { "name": "", "institute": "", "courseCode": "" } ], "startYear": 0, "instituteAbbr": "", "instituteLogo": { "url": "", "logoname": "", "filenameOnServer": "" }, "instituteName": "" } ]',
-            skills: '[{ "name": "", "category": "", "ratingOutOf10": 0 } ]',
-            projects: '[{ "title": "", "company": "", "projectType": "", "technologies": [ "" ], "projectDescription": [ "" ] } ]',
-            logos: '{"Email": { "url": "mailto:", "logoname": "Email", "filenameOnServer": "email-icon.png" }, "Github": { "url": "", "logoname": "Github", "filenameOnServer": "github-logo-white.png" }, "LinkedIn": { "url": "", "logoname": "LinkedIn", "filenameOnServer": "linkedin-logo-white.svg" } }',
-            extracurricular: '[{ "state": "", "country": "", "position": "", "organization": "", "timeOfActivity": "", "workDescription": "" } ]'
-        };
-        this.handleChange =  this.handleChange.bind(this);
+        updateState({
+            ...state,
+            [event.target.id]: event.target.value
+        });
     }
 
-    componentDidMount()
-    {
-        this.props.getUserWebsiteData({username: this.props.match.params.username})
-    }
+    // render()
+    // {
 
-    handleChange(event)
-    {
-        this.setState({[event.target.id]: event.target.value});
-    }
-
-    render()
-    {
-        // console.log("STATE", this.props, this.props.experiences !== null ?  JSON.stringify(this.props.experiences) : this.state.experiences);
+        // console.log("STATE", props, state);
         return (
             <Fragment>
 
@@ -49,9 +91,10 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            value = {this.props.personalInfo ?  JSON.stringify(this.props.personalInfo) : this.state.personalInfo}
-                            onChange = {this.handleChange}
+                            value = {state.personalInfo}
+                            onChange = {handleChange}
                             required
+                            key = {props.personalInfo}
                             />
                         </Paper>
                     </Grid>
@@ -65,9 +108,10 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            value = {this.props.experiences ?  JSON.stringify(this.props.experiences) : this.state.experiences}
-                            onChange = {this.handleChange}
+                            value = {state.experiences}
+                            onChange = {handleChange}
                             required
+                            key = {props.experiences}
                             />
                         </Paper>
                     </Grid>
@@ -81,8 +125,8 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            value = {this.props.education ?  JSON.stringify(this.props.education) : this.state.education}
-                            onChange = {this.handleChange}
+                            value = {state.education}
+                            onChange = {handleChange}
                             required
                             />
                         </Paper>
@@ -97,8 +141,8 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            value = {this.props.projects ?  JSON.stringify(this.props.projects) : this.state.projects}
-                            onChange = {this.handleChange}
+                            value = {state.projects}
+                            onChange = {handleChange}
                             required
                             />
                         </Paper>
@@ -113,8 +157,8 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            value = {this.props.skills ?  JSON.stringify(this.props.skills) : this.state.skills}
-                            onChange = {this.handleChange}
+                            value = {state.skills}
+                            onChange = {handleChange}
                             required
                             />
                         </Paper>
@@ -129,8 +173,8 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            value = {this.props.logos ?  JSON.stringify(this.props.logos) : this.state.logos}
-                            onChange = {this.handleChange}
+                            value = {state.logos}
+                            onChange = {handleChange}
                             required
                             />
                         </Paper>
@@ -145,8 +189,8 @@ class SubmitWebsiteData extends Component {
                             rowsMax= "16"
                             margin="normal"
                             fullWidth
-                            value = {this.props.extracurricular ?  JSON.stringify(this.props.extracurricular) : this.state.extracurricular}
-                            onChange = {this.handleChange}
+                            value = {state.extracurricular}
+                            onChange = {handleChange}
                             required
                             />
                         </Paper>
@@ -154,14 +198,14 @@ class SubmitWebsiteData extends Component {
                 </Grid>
                 
                 <Button color="primary" variant="contained" onClick = {() => {
-                    console.log("REFS", this.state);
-                    this.props.submitWebsiteData({...this.state, username: this.props.match.params.username});
+                    console.log("Submitted Data", state);
+                    props.submitWebsiteData({...state, username: props.match.params.username});
                 }} style={{marginTop: "5%", marginLeft: "1%"}}>
                     Submit
                 </Button>
             </Fragment>
         );
-    }
+    //}
 
 }
 
