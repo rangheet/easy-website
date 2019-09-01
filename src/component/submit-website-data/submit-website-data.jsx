@@ -199,6 +199,8 @@ function SubmitWebsiteData(props) {
                 
                 <Button color="primary" variant="contained" onClick = {() => {
                     console.log("Submitted Data", state);
+                    if(props.match.params.username == "rangheet")
+                        return;
                     props.submitWebsiteData({...state, username: props.match.params.username});
                 }} style={{marginTop: "5%", marginLeft: "1%"}}>
                     Submit

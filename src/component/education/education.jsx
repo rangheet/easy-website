@@ -27,10 +27,10 @@ class Education extends Component{
                     </Typography>
                     {education.map((institute,index) => <Paper key={index} square className="commonPaper" elevation={0}>
                                                             <Grid container direction="row">
-                                                                <Grid item lg={2} md={2} xs={12}>
+                                                                {/* <Grid item lg={2} md={2} xs={12}>
                                                                     <a href={institute.instituteLogo.url} target="_blank" ref="noopener"><img id={`${institute.instituteLogo.logoname}-logo`} className="logo-div" src= {institute.instituteLogo.filenameOnServer ? institute.instituteLogo.filenameOnServer : undefined} alt={institute.instituteLogo.logoname}/></a>
-                                                                </Grid>
-                                                                <Grid item lg={8} md={10} xs={12}>
+                                                                </Grid> */}
+                                                                <Grid item lg={10} md={12} xs={12}>
                                                                     <Typography variant="h5" color="inherit" align="left">
                                                                         {institute.instituteName}
                                                                         <a href={institute.instituteLogo.url} target="_blank" ref="noopener" className="linkIcon"><i className="material-icons">link</i></a>

@@ -33,10 +33,10 @@ class Experiences extends Component{
                             return (<Fragment key={index}>
                                         <Paper square className="commonPaper" elevation={0}>
                                             <Grid container direction="row">
-                                                <Grid item lg={2} md={2} xs={12}>
+                                                {/* <Grid item lg={2} md={2} xs={12}>
                                                     <a href={experience.companyLogo.url} target="_blank" ref="noopener"><img id={`${experience.companyLogo.logoname}-logo`} className="logo-div" src= {experience.companyLogo.filenameOnServer ? experience.companyLogo.filenameOnServer : undefined} alt={experience.companyLogo.logoname}/></a>
-                                                </Grid>
-                                                <Grid item item lg={8} md={10} xs={12}>
+                                                </Grid> */}
+                                                <Grid item item lg={10} md={10} xs={12}>
                                                         <Typography variant="h5" color="inherit" align="left">
                                                             {experience.companyName}
                                                             <a href={experience.companyLogo.url} target="_blank" ref="noopener" className="linkIcon"><i className="material-icons">link</i></a>

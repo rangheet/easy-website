@@ -5,7 +5,7 @@ import PersonalInfo from "../personal-info/personal-info";
 import Projects from "../projects/projects";
 import Education from "../education/education";
 import Extracurricular from "../extracurricular/extracurricular";
-import SubmitWebsiteData from "../submit-website-data//submit-website-data";
+import SubmitWebsiteData from "../submit-website-data/submit-website-data";
 import Electives from "../electives/electives";
 import Skills from "../skills/skills";
 import  Logos from "../logos/logos";
@@ -13,8 +13,8 @@ import { store } from "../../store";
 import { actionType, actions } from "./ducks";
 import { HashRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
-
 import "./main-component.css";
+import WelcomeScreen from "../welcome-screen/welcome-screen";
 
 class MainComponent extends Component{
 
@@ -32,7 +32,8 @@ class MainComponent extends Component{
   render(){
     return(
       <div className="MainComponent">
-        <PersonalInfo/>
+        {this.props.match.params.username=="rangheet" && <WelcomeScreen/>}
+        <PersonalInfo showNewWebsiteModal={this.props.showNewWebsiteModal}/>
         <Logos/>
         {/* <Electives/> */}
         {/* <div className="sectionDivider"/> */}
@@ -60,6 +61,14 @@ class Root extends Component{
       <div>
         <Route exact path="/:username" component={MainComponentWithConnect} />
         <Route exact path="/:username/submit" component={SubmitWebsiteData} />
+        <Route exact path="/" render={(props) => <MainComponentWithConnect {...props} 
+          match={
+            {...props.match,
+            params: {
+              username: "rangheet"
+            }}
+          } 
+        />} />
       </div>
     );
   }
